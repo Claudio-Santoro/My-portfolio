@@ -1,92 +1,78 @@
 :root {
-      --cream: #f5f0e8;
-      --ink:   #1a1714;
-      --rust:  #c0533a;
-      --muted: #8a7f76;
-    }
+  --grey:     #63768D;
+  --white:    #FFFFFF;
+  --tropical: #36213E;
+}
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background-color: var(--cream);
-      color: var(--ink);
-    }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--grey);
+  color: var(--white);
+}
 
-    /* Display / heading font */
-    .font-display { font-family: 'Playfair Display', serif; }
+.font-display { font-family: 'Playfair Display', serif; }
 
-    /* Accent color */
-    .text-accent  { color: var(--rust); }
-    .bg-accent    { background-color: var(--rust); }
-    .border-accent{ border-color: var(--rust); }
+.text-accent   { color: var(--tropical); }
+.bg-accent     { background-color: var(--tropical); }
+.border-accent { border-color: var(--tropical); }
+.text-muted    { color: var(--white); }
 
-    /* Muted text */
-    .text-muted   { color: var(--muted); }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up  { opacity: 0; animation: fadeUp 0.7s ease forwards; }
+.delay-1  { animation-delay: 0.15s; }
+.delay-2  { animation-delay: 0.30s; }
+.delay-3  { animation-delay: 0.45s; }
+.delay-4  { animation-delay: 0.60s; }
 
-    /* ── Fade-in animation ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .fade-up {
-      opacity: 0;
-      animation: fadeUp 0.7s ease forwards;
-    }
-    .delay-1 { animation-delay: 0.15s; }
-    .delay-2 { animation-delay: 0.30s; }
-    .delay-3 { animation-delay: 0.45s; }
-    .delay-4 { animation-delay: 0.60s; }
+.nav-link {
+  position: relative;
+  text-decoration: none;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 0; height: 1px;
+  background: var(--tropical);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after { width: 100%; }
 
-    /* ── Hover underline effect for nav links ── */
-    .nav-link {
-      position: relative;
-      text-decoration: none;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      left: 0; bottom: -2px;
-      width: 0; height: 1px;
-      background: var(--rust);
-      transition: width 0.3s ease;
-    }
-    .nav-link:hover::after { width: 100%; }
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.10);
+}
 
-    /* ── Card hover lift ── */
-    .card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.10);
-    }
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--tropical);
+  opacity: 0.3;
+}
 
-    /* ── Horizontal rule with decoration ── */
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .divider::before, .divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--muted);
-      opacity: 0.3;
-    }
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 3px rgba(54, 33, 62, 0.12);
+}
 
-    /* ── Form inputs ── */
-    input:focus, textarea:focus {
-      box-shadow: 0 0 0 3px rgba(192, 83, 58, 0.12);
-    }
-
-    /* ── Skill badge ── */
-    .badge {
-      border: 1px solid var(--muted);
-      opacity: 0.7;
-      transition: opacity 0.2s, border-color 0.2s;
-    }
-    .badge:hover {
-      opacity: 1;
-      border-color: var(--rust);
-      color: var(--rust);
-    }
+.badge {
+  border: 1px solid var(--tropical);
+  opacity: 0.7;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+.badge:hover {
+  opacity: 1;
+  border-color: var(--tropical);
+  color: var(--tropical);
+}

@@ -10,102 +10,7 @@
 
   <!-- Google Fonts: Playfair Display + DM Sans -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-
-  <style>
-    /* ── CSS Variables ── */
-    :root {
-      --cream: #f5f0e8;
-      --ink:   #1a1714;
-      --rust:  #c0533a;
-      --muted: #8a7f76;
-    }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background-color: var(--cream);
-      color: var(--ink);
-    }
-
-    /* Display / heading font */
-    .font-display { font-family: 'Playfair Display', serif; }
-
-    /* Accent color */
-    .text-accent  { color: var(--rust); }
-    .bg-accent    { background-color: var(--rust); }
-    .border-accent{ border-color: var(--rust); }
-
-    /* Muted text */
-    .text-muted   { color: var(--muted); }
-
-    /* ── Fade-in animation ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .fade-up {
-      opacity: 0;
-      animation: fadeUp 0.7s ease forwards;
-    }
-    .delay-1 { animation-delay: 0.15s; }
-    .delay-2 { animation-delay: 0.30s; }
-    .delay-3 { animation-delay: 0.45s; }
-    .delay-4 { animation-delay: 0.60s; }
-
-    /* ── Hover underline effect for nav links ── */
-    .nav-link {
-      position: relative;
-      text-decoration: none;
-    }
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      left: 0; bottom: -2px;
-      width: 0; height: 1px;
-      background: var(--rust);
-      transition: width 0.3s ease;
-    }
-    .nav-link:hover::after { width: 100%; }
-
-    /* ── Card hover lift ── */
-    .card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.10);
-    }
-
-    /* ── Horizontal rule with decoration ── */
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .divider::before, .divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--muted);
-      opacity: 0.3;
-    }
-
-    /* ── Form inputs ── */
-    input:focus, textarea:focus {
-      box-shadow: 0 0 0 3px rgba(192, 83, 58, 0.12);
-    }
-
-    /* ── Skill badge ── */
-    .badge {
-      border: 1px solid var(--muted);
-      opacity: 0.7;
-      transition: opacity 0.2s, border-color 0.2s;
-    }
-    .badge:hover {
-      opacity: 1;
-      border-color: var(--rust);
-      color: var(--rust);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="min-h-screen">
@@ -231,8 +136,8 @@
           <p class="text-muted text-sm leading-relaxed mb-6">
             Hanging Around is a web application designed to create a digital place where the user can share their passions, hobbies and join activities around him. Focused on the Sicilian territory, this initiative is meant to connect people and create wider communities in a land characterised by a strong social closure and low Bridging Social Capital.
           <div class="flex gap-2 flex-wrap mb-6">
-            <span class="badge text-xs px-3 py-1 rounded-full text-muted">React</span>
-            <span class="badge text-xs px-3 py-1 rounded-full text-muted">Node.js</span>
+            <span class="badge text-xs px-3 py-1 rounded-full text-muted">Typescript</span>
+            <span class="badge text-xs px-3 py-1 rounded-full text-muted">Java</span>
             <span class="badge text-xs px-3 py-1 rounded-full text-muted">PostgreSQL</span>
             <span class="badge text-xs px-3 py-1 rounded-full text-muted">Tailwind CSS</span>
           </div>
@@ -282,9 +187,8 @@
           <span class="badge text-sm px-4 py-2 rounded-full text-muted">HTML & CSS</span>
           <span class="badge text-sm px-4 py-2 rounded-full text-muted">JavaScript</span>
           <span class="badge text-sm px-4 py-2 rounded-full text-muted">TypeScript</span>
-          <span class="badge text-sm px-4 py-2 rounded-full text-muted">React</span>
           <span class="badge text-sm px-4 py-2 rounded-full text-muted">Tailwind CSS</span>
-          <span class="badge text-sm px-4 py-2 rounded-full text-muted">Figma</span>
+          
         </div>
       </div>
 
@@ -301,11 +205,9 @@
           <h3 class="font-display text-xl">Back-End</h3>
         </div>
         <div class="flex flex-wrap gap-2">
-          <span class="badge text-sm px-4 py-2 rounded-full text-muted">Node.js</span>
-          <span class="badge text-sm px-4 py-2 rounded-full text-muted">Python</span>
+          <span class="badge text-sm px-4 py-2 rounded-full text-muted">Javascript</span>
+          <span class="badge text-sm px-4 py-2 rounded-full text-muted">Java</span>
           <span class="badge text-sm px-4 py-2 rounded-full text-muted">PostgreSQL</span>
-          <span class="badge text-sm px-4 py-2 rounded-full text-muted">REST APIs</span>
-          <span class="badge text-sm px-4 py-2 rounded-full text-muted">Docker</span>
           <span class="badge text-sm px-4 py-2 rounded-full text-muted">Git & GitHub</span>
         </div>
       </div>

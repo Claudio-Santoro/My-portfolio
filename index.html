@@ -4,55 +4,112 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Claudio Santoro</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <!-- 1. Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Tailwind config — registers custom colors so we can use them as Tailwind classes -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            tropical: '#36213E',
+            grey:     '#63768D',
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'serif'],
+            sans:    ['"DM Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- 3. Custom CSS — loaded after Tailwind config so it wins the cascade -->
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="min-h-screen">
+<body class="min-h-screen font-sans">
 
-  <nav class="fixed top-0 inset-x-0 z-50 bg-opacity-90 backdrop-blur border-b border-black/5">
+  <!-- ════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════ -->
+  <nav class="nav-bar fixed top-0 inset-x-0 z-50 border-b border-white/10">
     <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+
+      <!-- Logo -->
       <span class="font-display text-xl tracking-tight">
-        Claudio <span class="text-accent">Santoro</span>
+        <span class="name-accent">Claudio Santoro</span>
       </span>
-      <ul class="flex gap-8 text-sm font-medium text-muted ml-5 mr-5">
-        <li><a href="#about"    class="nav-link hover:text-white">About</a></li>
-        <li><a href="#projects" class="nav-link hover:text-white">Projects</a></li>
-        <li><a href="#skills"   class="nav-link hover:text-white">Skills</a></li>
-        <li><a href="#contact"  class="nav-link hover:text-white">Contact</a></li>
+
+      <!-- Desktop nav -->
+      <ul class="hidden md:flex gap-8 text-sm font-medium">
+        <li><a href="#about"    class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills"   class="nav-link">Skills</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Hamburger (mobile) -->
+      <button id="hamburger" class="md:hidden flex flex-col justify-center gap-1.5 p-2 w-10 h-10" aria-label="Toggle menu">
+        <span id="bar1" class="block w-6 h-0.5 bg-white origin-center transition-all duration-300"></span>
+        <span id="bar2" class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+        <span id="bar3" class="block w-6 h-0.5 bg-white origin-center transition-all duration-300"></span>
+      </button>
+    </div>
+
+    <!-- Mobile dropdown -->
+    <div id="nav-menu" class="md:hidden px-6">
+      <ul class="flex flex-col gap-4 text-sm font-medium py-4 border-t border-white/10">
+        <li><a href="#about"    class="nav-link" onclick="closeMenu()">About</a></li>
+        <li><a href="#projects" class="nav-link" onclick="closeMenu()">Projects</a></li>
+        <li><a href="#skills"   class="nav-link" onclick="closeMenu()">Skills</a></li>
+        <li><a href="#contact"  class="nav-link" onclick="closeMenu()">Contact</a></li>
       </ul>
     </div>
   </nav>
 
 
-  <header id="about" class="max-w-5xl mx-auto px-6 pt-40 pb-28">
-    <div class="flex flex-col md:flex-row items-center gap-14">
+  <!-- ════════════════════════════════════
+       HERO / ABOUT
+  ════════════════════════════════════ -->
+  <header id="about" class="max-w-5xl mx-auto px-6 pt-36 pb-24">
+    <div class="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-14">
 
-      <div class="flex-1">
-        <p class="fade-up text-white text-sm tracking-widest uppercase font-medium mb-4">
-          Portfolio
+      <!-- Text -->
+      <div class="flex-1 text-center md:text-left">
+
+        <p class="fade-up text-sm tracking-widest uppercase font-medium mb-4 text-white/85">
+          Portfolio · Full-Stack Developer
         </p>
-        <h1 class="fade-up delay-1 font-display text-5xl md:text-7xl leading-none mb-6">
+
+        <h1 class="fade-up delay-1 font-display leading-none mb-6 text-white"
+            style="font-size: clamp(2.4rem, 7vw, 4.8rem);">
           Hello,<br/>
-          I'm <em class="text-accent not-italic">Claudio Santoro</em>.
+          I'm <em class="not-italic name-accent">Claudio Santoro</em>.
         </h1>
-        <p class="fade-up delay-2 text-muted text-lg leading-relaxed mb-10">
-          I'm a <strong class="text-white font-medium">Full-Stack Developer</strong> passionate about
+
+        <p class="fade-up delay-2 text-base md:text-lg leading-relaxed mb-10 max-w-lg mx-auto md:mx-0 text-white/90">
+          I'm a <strong class="text-white font-semibold">Full-Stack Developer</strong> passionate about
           building clean, fast, and user-focused digital experiences.
         </p>
-        <div class="fade-up delay-3 flex gap-4 flex-wrap">
-          <a href="#projects"
-             class="flex items-center gap-2 border border-[var(--tropical)] text-accent px-6 py-3 text-sm font-medium rounded-full hover:bg-accent hover:text-white transition">
+
+        <!-- CTA buttons -->
+        <div class="fade-up delay-3 flex gap-3 flex-wrap justify-center md:justify-start">
+          <a href="#projects" class="btn-ghost text-sm font-medium px-5 py-2.5 rounded-full">
             View Projects
           </a>
-          <a href="#contact"
-             class="flex items-center gap-2 border border-[var(--tropical)] text-accent px-6 py-3 text-sm font-medium rounded-full hover:bg-accent hover:text-white transition">
+          <a href="#contact" class="btn-ghost text-sm font-medium px-5 py-2.5 rounded-full">
             Get in Touch
           </a>
           <a href="Claudio.Santoro.CV.ITA.pdf" download
-             class="flex items-center gap-2 border border-[var(--tropical)] text-accent px-6 py-3 text-sm font-medium rounded-full hover:bg-accent hover:text-white transition">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
+             class="flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-full hover:opacity-90 transition"
+             style="background:white; color:#36213E;">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
               <polyline points="7 10 12 15 17 10"/>
@@ -63,53 +120,77 @@
         </div>
       </div>
 
+      <!-- Photo card -->
       <div class="fade-up delay-4 shrink-0">
-        <div class="relative w-64 h-80 rounded-3xl overflow-hidden shadow-xl ring-1 ring-black/10 group">
-          <img
-            src="me.jpg"
-            alt="Profile photo"
-            class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-          />
-          <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/30 to-transparent"></div>
-          <span class="absolute top-4 right-4 w-3 h-3 rounded-full bg-accent opacity-80"></span>
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl group"
+             style="width:210px; height:264px;">
+          <img src="me.jpg" alt="Claudio Santoro"
+               class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+               style="
+                 -webkit-mask-image: radial-gradient(ellipse 85% 90% at 50% 50%, black 55%, transparent 100%);
+                 mask-image: radial-gradient(ellipse 85% 90% at 50% 50%, black 55%, transparent 100%);
+               "/>
+          <span class="absolute top-4 right-4 w-3 h-3 rounded-full bg-white opacity-75"></span>
         </div>
+        <p class="text-center text-xs mt-3 tracking-wide text-white/65">
+          Claudio Santoro · Developer
+        </p>
       </div>
 
     </div>
   </header>
 
 
+  <!-- ════════════════════════════════════
+       PROJECTS
+  ════════════════════════════════════ -->
   <section id="projects" class="max-w-5xl mx-auto px-6 py-20">
 
     <div class="divider mb-12">
-      <h2 class="font-display text-3xl whitespace-nowrap">  Featured projects</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Featured Projects</h2>
     </div>
 
-    <article class="card bg-white rounded-3xl overflow-hidden shadow-sm flex flex-col md:flex-row">
-      <div class="md:w-2/5 h-56 md:h-auto bg-gradient-to-br from-stone-200 to-orange-100 flex items-center justify-center text-muted text-xs tracking-widest uppercase shrink-0">
-        <img src="Logo3.png" class="w-full h-full object-cover" alt="logoprogetto" />
+    <article class="card-hover bg-white rounded-3xl overflow-hidden shadow-md flex flex-col md:flex-row">
+
+      <!-- Image -->
+      <div class="md:w-2/5 h-56 md:h-auto shrink-0 overflow-hidden">
+        <img src="Logo3.png" class="w-full h-full object-cover" alt="Hanging Around project"/>
       </div>
-      <div class="flex-1 p-8 flex flex-col justify-between">
+
+      <!-- Details -->
+      <div class="flex-1 p-6 md:p-8 flex flex-col justify-between">
         <div>
-          <span class="text-xs text-accent uppercase tracking-widest font-medium">Web App</span>
-          <h3 class="font-display text-accent text-3xl mt-1 mb-3">HANGING AROUND</h3>
-          <p class="text-accent text-sm leading-relaxed mb-6">
-            Hanging Around is a web application designed to create a digital place where the user can share their passions, hobbies and join activities around him. Focused on the Sicilian territory, this initiative is meant to connect people and create wider communities in a land characterised by a strong social closure and low Bridging Social Capital.
+          <span class="text-xs uppercase tracking-widest font-medium text-grey">Web App</span>
+          <h3 class="font-display text-2xl md:text-3xl mt-1 mb-3 text-tropical">HANGING AROUND</h3>
+          <p class="text-sm leading-relaxed mb-6" style="color:#5a5a6a;">
+            Hanging Around is a web application designed to create a digital place where users can share
+            their passions, hobbies and join activities around them. Focused on the Sicilian territory,
+            this initiative connects people and builds wider communities in a land characterised by strong
+            social closure and low Bridging Social Capital.
           </p>
           <div class="flex gap-2 flex-wrap mb-6">
-            <span class="badge text-xs px-3 py-1 rounded-full text-accent">Typescript</span>
-            <span class="badge text-xs px-3 py-1 rounded-full text-accent">Java</span>
-            <span class="badge text-xs px-3 py-1 rounded-full text-accent">PostgreSQL</span>
-            <span class="badge text-xs px-3 py-1 rounded-full text-accent">Tailwind CSS</span>
+            <span class="badge text-xs px-3 py-1 rounded-full">TypeScript</span>
+            <span class="badge text-xs px-3 py-1 rounded-full">Java</span>
+            <span class="badge text-xs px-3 py-1 rounded-full">PostgreSQL</span>
+            <span class="badge text-xs px-3 py-1 rounded-full">Tailwind CSS</span>
           </div>
         </div>
+
         <div class="flex gap-3 flex-wrap">
-          <a href="#" class="bg-accent text-white text-sm px-5 py-2.5 rounded-full hover:opacity-90 transition flex items-center gap-2">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <a href="#"
+             class="flex items-center gap-2 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:opacity-90 transition"
+             style="background-color:#36213E;">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
             Live Demo
           </a>
-          <a href="#" class="border border-[var(--tropical)] text-accent text-sm px-5 py-2.5 rounded-full hover:bg-[var(--tropical)] hover:text-white transition flex items-center gap-2">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          <a href="https://github.com/Claudio-Santoro" target="_blank" rel="noopener noreferrer"
+             class="btn-outline flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-full">
+            <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
             GitHub
           </a>
         </div>
@@ -119,46 +200,56 @@
   </section>
 
 
+  <!-- ════════════════════════════════════
+       SKILLS
+  ════════════════════════════════════ -->
   <section id="skills" class="max-w-5xl mx-auto px-6 py-20">
 
     <div class="divider mb-12">
-      <h2 class="font-display text-3xl whitespace-nowrap">Skills & Tools</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Skills &amp; Tools</h2>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-      <div class="bg-white rounded-2xl p-8 shadow-sm">
+      <!-- Front-End -->
+      <div class="bg-white rounded-2xl p-6 md:p-8 shadow-md">
         <div class="flex items-center gap-3 mb-6">
-          <span class="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
-            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+          <span class="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
+                style="background-color:rgba(54,33,62,0.08);">
+            <svg class="w-4 h-4 text-tropical" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <path d="M8 21h8M12 17v4"/>
             </svg>
           </span>
-          <h3 class="font-display text-accent text-xl">Front-End</h3>
+          <h3 class="font-display text-xl text-tropical">Front-End</h3>
         </div>
         <div class="flex flex-wrap gap-2">
-          <span class="badge text-sm px-4 py-2 rounded-full text-accent">HTML & CSS</span>
-          <span class="badge text-sm px-4 py-2 rounded-full text-accent">JavaScript</span>
-          <span class="badge text-sm px-4 py-2 rounded-full text-accent">TypeScript</span>
-          <span class="badge text-sm px-4 py-2 rounded-full text-accent">Tailwind CSS</span>
+          <span class="badge text-sm px-4 py-2 rounded-full">HTML &amp; CSS</span>
+          <span class="badge text-sm px-4 py-2 rounded-full">JavaScript</span>
+          <span class="badge text-sm px-4 py-2 rounded-full">TypeScript</span>
+          <span class="badge text-sm px-4 py-2 rounded-full">Tailwind CSS</span>
         </div>
       </div>
 
-      <div class="bg-white rounded-2xl p-8 shadow-sm">
+      <!-- Back-End -->
+      <div class="bg-white rounded-2xl p-6 md:p-8 shadow-md">
         <div class="flex items-center gap-3 mb-6">
-          <span class="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center">
-            <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/>
-              <line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/>
+          <span class="w-9 h-9 rounded-full flex items-center justify-center shrink-0"
+                style="background-color:rgba(54,33,62,0.08);">
+            <svg class="w-4 h-4 text-tropical" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="8" rx="2"/>
+              <rect x="2" y="14" width="20" height="8" rx="2"/>
+              <line x1="6" y1="6" x2="6.01" y2="6"/>
+              <line x1="6" y1="18" x2="6.01" y2="18"/>
             </svg>
           </span>
-          <h3 class="font-display text-accent text-xl">Back-End</h3>
+          <h3 class="font-display text-xl text-tropical">Back-End</h3>
         </div>
         <div class="flex flex-wrap gap-2">
-          <span class="badge text-sm px-4 py-2 rounded-full text-accent">Javascript</span>
-          <span class="badge text-sm px-4 py-2 rounded-full text-accent">Java</span>
-          <span class="badge text-sm px-4 py-2 rounded-full text-accent">PostgreSQL</span>
-          <span class="badge text-sm px-4 py-2 rounded-full text-accent">Git & GitHub</span>
+          <span class="badge text-sm px-4 py-2 rounded-full">JavaScript</span>
+          <span class="badge text-sm px-4 py-2 rounded-full">Java</span>
+          <span class="badge text-sm px-4 py-2 rounded-full">PostgreSQL</span>
+          <span class="badge text-sm px-4 py-2 rounded-full">Git &amp; GitHub</span>
         </div>
       </div>
 
@@ -166,115 +257,158 @@
   </section>
 
 
+  <!-- ════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════ -->
   <section id="contact" class="max-w-5xl mx-auto px-6 py-20">
 
     <div class="divider mb-12">
-      <h2 class="font-display text-3xl whitespace-nowrap">Get In Touch</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Get In Touch</h2>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-6 items-start">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
 
-      <div class="bg-white rounded-2xl p-8 shadow-sm">
-        <p class="font-display text-accent text-2xl mb-1">Send me a message.</p>
-        <p class="text-accent text-sm mb-6">I'll get back to you as soon as possible.</p>
+      <!-- Form -->
+      <div class="bg-white rounded-2xl p-6 md:p-8 shadow-md">
+        <p class="font-display text-xl md:text-2xl mb-1 text-tropical">Send me a message.</p>
+        <p class="text-sm mb-6" style="color:#5a5a6a;">I'll get back to you as soon as possible.</p>
 
-        <form action="#" method="POST" class="flex flex-col gap-4">
-
+        <form action="https://formspree.io/f/xaqplvga" method="POST" class="flex flex-col gap-4">
           <div>
-            <label class="block text-xs font-medium text-accent uppercase tracking-wider mb-1" for="name">Name</label>
-            <input
-              id="name" name="name" type="text" placeholder="Your Name" required
-              class="w-full text-accent border border-[var(--tropical)] rounded-xl px-4 py-3 text-sm bg-white focus:outline-none focus:border-[var(--white)] transition placeholder:text-tropical/50"
-            />
+            <label class="block text-xs font-medium uppercase tracking-wider mb-1 text-grey" for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your Name" required class="form-input"/>
           </div>
-
           <div>
-            <label class="block text-xs font-medium text-accent uppercase tracking-wider mb-1" for="email">Email</label>
-            <input
-              id="email" name="email" type="email" placeholder="your@email.com" required
-              class="w-full text-accent border border-[var(--tropical)] rounded-xl px-4 py-3 text-sm bg-white focus:outline-none focus:border-[var(--white)] transition placeholder:text-accent"
-            />
+            <label class="block text-xs font-medium uppercase tracking-wider mb-1 text-grey" for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="your@email.com" required class="form-input"/>
           </div>
-
           <div>
-            <label class="block text-xs font-medium text-accent uppercase tracking-wider mb-1" for="message">Message</label>
-            <textarea
-              id="message" name="message" rows="4" placeholder="Tell me about your project…" required
-              class="w-full text-accent border border-[var(--tropical)] rounded-xl px-4 py-3 text-sm bg-white focus:outline-none focus:border-[var(--white)] transition placeholder:text-accent/50 resize-none"
-            ></textarea>
+            <label class="block text-xs font-medium uppercase tracking-wider mb-1 text-grey" for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell me about your project…"
+                      required class="form-input resize-none"></textarea>
           </div>
-
-          <button
-            type="submit"
-            class="bg-accent text-white text-sm font-medium px-6 py-3 rounded-full hover:opacity-90 transition self-start flex items-center gap-2">
+          <button type="submit"
+                  class="flex items-center gap-2 self-start text-white text-sm font-medium px-6 py-3 rounded-full hover:opacity-90 transition"
+                  style="background-color:#36213E;">
             Send Message
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9l20-7z"/>
             </svg>
           </button>
-
         </form>
       </div>
 
+      <!-- Info cards -->
       <div class="flex flex-col gap-4">
 
-        <div class="bg-white rounded-2xl p-6 shadow-sm flex items-center gap-4 card">
-          <span class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+        <!-- Email -->
+        <div class="card-hover bg-white rounded-2xl p-5 shadow-md flex items-center gap-4">
+          <span class="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
+                style="background-color:rgba(54,33,62,0.08);">
+            <svg class="w-5 h-5 text-tropical" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
             </svg>
           </span>
-          <div>
-            <p class="text-xs text-accent uppercase tracking-widest mb-0.5">Email</p>
-            <a href="mailto:santoro.claudio00cs@gmail.com" class="text-sm text-accent font-medium nav-link hover:text-accent">santoro.claudio00cs@gmail.com</a>
+          <div class="min-w-0">
+            <p class="text-xs uppercase tracking-widest mb-0.5 text-grey">Email</p>
+            <a href="mailto:santoro.claudio00cs@gmail.com" class="text-sm font-medium contact-link">
+              santoro.claudio00cs@gmail.com
+            </a>
           </div>
         </div>
 
-        <div class="bg-white rounded-2xl p-6 shadow-sm flex items-center gap-4 card">
-          <span class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 24 24">
+        <!-- GitHub -->
+        <div class="card-hover bg-white rounded-2xl p-5 shadow-md flex items-center gap-4">
+          <span class="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
+                style="background-color:rgba(54,33,62,0.08);">
+            <svg class="w-5 h-5 text-tropical" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
             </svg>
           </span>
           <div>
-            <p class="text-xs text-accent uppercase tracking-widest mb-0.5">GitHub</p>
-            <a href="https://github.com/Claudio-Santoro/My-portfolio" target="_blank" class="text-sm text-accent font-medium nav-link hover:text-accent" rel="noopener noreferrer">github.com/Claudio-Santoro</a>
+            <p class="text-xs uppercase tracking-widest mb-0.5 text-grey">GitHub</p>
+            <a href="https://github.com/Claudio-Santoro/My-portfolio" target="_blank" rel="noopener noreferrer"
+               class="text-sm font-medium contact-link">
+              github.com/Claudio-Santoro
+            </a>
           </div>
         </div>
 
-        <div class="bg-white rounded-2xl p-6 shadow-sm flex items-center gap-4 card">
-          <span class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+        <!-- LinkedIn -->
+        <div class="card-hover bg-white rounded-2xl p-5 shadow-md flex items-center gap-4">
+          <span class="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
+                style="background-color:rgba(54,33,62,0.08);">
+            <svg class="w-5 h-5 text-tropical" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/>
+              <circle cx="4" cy="4" r="2"/>
             </svg>
           </span>
           <div>
-            <p class="text-xs text-accent uppercase tracking-widest mb-0.5">LinkedIn</p>
-            <a href="https://www.linkedin.com/in/claudio-santoro-5b39a5262/" target="_blank" class="text-sm text-accent font-medium nav-link hover:text-accent">linkedin.com/in/Claudio-Santoro</a>
+            <p class="text-xs uppercase tracking-widest mb-0.5 text-grey">LinkedIn</p>
+            <a href="https://www.linkedin.com/in/claudio-santoro-5b39a5262/" target="_blank" rel="noopener noreferrer"
+               class="text-sm font-medium contact-link">
+              linkedin.com/in/Claudio-Santoro
+            </a>
           </div>
         </div>
 
-        <div class="bg-white rounded-2xl p-6 shadow-sm flex items-center gap-4 card">
-          <span class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/>
+        <!-- Location -->
+        <div class="card-hover bg-white rounded-2xl p-5 shadow-md flex items-center gap-4">
+          <span class="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
+                style="background-color:rgba(54,33,62,0.08);">
+            <svg class="w-5 h-5 text-tropical" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
             </svg>
           </span>
           <div>
-            <p class="text-xs text-accent uppercase tracking-widest mb-0.5">Location</p>
-            <p class="text-sm text-accent font-medium">Trapani, Sicily</p>
+            <p class="text-xs uppercase tracking-widest mb-0.5 text-grey">Location</p>
+            <p class="text-sm font-medium text-tropical">Trapani, Sicily 🇮🇹</p>
           </div>
         </div>
 
       </div>
-
     </div>
   </section>
 
 
-  <footer class="text-center py-8 text-xs text-muted border-t border-black/5">
-    © 2026 All rights reserved
+  <!-- ════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════ -->
+  <footer class="text-center py-8 text-xs border-t border-white/10 text-white/60">
+    © 2026 Claudio Santoro — All rights reserved
   </footer>
+
+
+  <!-- ════════════════════════════════════
+       MOBILE NAV SCRIPT
+  ════════════════════════════════════ -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu   = document.getElementById('nav-menu');
+    const bar1      = document.getElementById('bar1');
+    const bar2      = document.getElementById('bar2');
+    const bar3      = document.getElementById('bar3');
+
+    function openMenu() {
+      navMenu.classList.add('open');
+      bar1.style.transform = 'translateY(8px) rotate(45deg)';
+      bar2.style.opacity   = '0';
+      bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+    }
+
+    function closeMenu() {
+      navMenu.classList.remove('open');
+      bar1.style.transform = '';
+      bar2.style.opacity   = '1';
+      bar3.style.transform = '';
+    }
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.contains('open') ? closeMenu() : openMenu();
+    });
+  </script>
 
 </body>
 </html>

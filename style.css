@@ -1,78 +1,230 @@
-:root {
-  --grey:     #63768D;
-  --white:    #FFFFFF;
-  --tropical: #36213E;
-}
+/* ══════════════════════════════════════
+   BASE
+══════════════════════════════════════ */
+html { scroll-behavior: smooth; }
 
 body {
   font-family: 'DM Sans', sans-serif;
-  background-color: var(--grey);
-  color: var(--white);
+  background-color: #000000;
+  color: #ffffff;
 }
 
-.font-display { font-family: 'Playfair Display', serif; }
-
-.text-accent   { color: var(--tropical); }
-.bg-accent     { background-color: var(--tropical); }
-.border-accent { border-color: var(--tropical); }
-.text-muted    { color: var(--white); }
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+/* ══════════════════════════════════════
+   NAVIGATION
+══════════════════════════════════════ */
+.nav-bar {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
-.fade-up  { opacity: 0; animation: fadeUp 0.7s ease forwards; }
-.delay-1  { animation-delay: 0.15s; }
-.delay-2  { animation-delay: 0.30s; }
-.delay-3  { animation-delay: 0.45s; }
-.delay-4  { animation-delay: 0.60s; }
 
 .nav-link {
   position: relative;
   text-decoration: none;
+  color: rgba(255,255,255,0.90);
+  transition: color 0.2s;
 }
+.nav-link:hover { color: #ffffff; }
 .nav-link::after {
   content: '';
   position: absolute;
-  left: 0; bottom: -2px;
+  left: 0; bottom: -3px;
   width: 0; height: 1px;
-  background: var(--tropical);
+  background: #ffffff;
   transition: width 0.3s ease;
 }
 .nav-link:hover::after { width: 100%; }
 
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Mobile nav slide */
+#nav-menu {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.3s ease;
 }
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.10);
+#nav-menu.open {
+  max-height: 320px;
+  opacity: 1;
 }
 
+/* ══════════════════════════════════════
+   NAME SHIMMER ACCENT
+══════════════════════════════════════ */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.name-accent {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #c4b5fd 30%,
+    #f0abfc 50%,
+    #c4b5fd 70%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3.5s linear infinite;
+}
+
+/* ══════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { opacity: 0; animation: fadeUp 0.7s ease forwards; }
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.30s; }
+.delay-3 { animation-delay: 0.45s; }
+.delay-4 { animation-delay: 0.60s; }
+
+/* ══════════════════════════════════════
+   SECTION DIVIDER
+══════════════════════════════════════ */
 .divider {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-.divider::before, .divider::after {
+.divider::before,
+.divider::after {
   content: '';
   flex: 1;
   height: 1px;
-  background: var(--tropical);
-  opacity: 0.3;
+  background: rgba(255,255,255,0.22);
 }
 
-input:focus, textarea:focus {
-  box-shadow: 0 0 0 3px rgba(54, 33, 62, 0.12);
+/* ══════════════════════════════════════
+   CARD HOVER LIFT
+══════════════════════════════════════ */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
+/* ══════════════════════════════════════
+   SKILL BADGE  (inside white cards)
+══════════════════════════════════════ */
 .badge {
-  border: 1px solid var(--tropical);
-  opacity: 0.7;
-  transition: opacity 0.2s, border-color 0.2s;
+  display: inline-block;
+  border: 1px solid rgba(54,33,62,0.35);
+  color: #36213E;
+  opacity: 0.82;
+  transition: opacity 0.2s, background-color 0.2s, border-color 0.2s, color 0.2s;
 }
 .badge:hover {
   opacity: 1;
-  border-color: var(--tropical);
-  color: var(--tropical);
+  border-color: #c4b5fd;
+  background-color: #c4b5fd;
+  color: #36213E;
+}
+
+/* ══════════════════════════════════════
+   BUTTONS
+══════════════════════════════════════ */
+
+/* Ghost — used on dark/black background */
+@keyframes btnShimmer {
+  0%   { box-shadow: 0 0 0 1.5px #c4b5fd; }
+  33%  { box-shadow: 0 0 0 1.5px #f0abfc; }
+  66%  { box-shadow: 0 0 0 1.5px #c4b5fd; }
+  100% { box-shadow: 0 0 0 1.5px #c4b5fd; }
+}
+.btn-ghost {
+  border: none;
+  color: #ffffff;
+  background: transparent;
+  animation: btnShimmer 2s linear infinite;
+  transition: background-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover {
+  background-color: #c4b5fd;
+  color: #36213E;
+  animation: none;
+  box-shadow: none;
+}
+
+/* Outline — used inside white cards */
+.btn-outline {
+  border: 1px solid #36213E;
+  color: #36213E;
+  background: transparent;
+  transition: background-color 0.2s, color 0.2s;
+}
+.btn-outline:hover {
+  background-color: #36213E;
+  color: #ffffff;
+}
+
+/* ══════════════════════════════════════
+   FORM INPUTS
+══════════════════════════════════════ */
+.form-input {
+  width: 100%;
+  border: 1px solid rgba(54,33,62,0.28);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  background: white;
+  color: #36213E;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.form-input::placeholder {
+  color: rgba(54,33,62,0.32);
+}
+.form-input:focus {
+  outline: none;
+  border-color: transparent;
+  box-shadow:
+    0 0 0 2px transparent,
+    0 0 0 2px #c4b5fd;
+  animation: inputShimmer 2s linear infinite;
+}
+
+@keyframes inputShimmer {
+  0%   { box-shadow: 0 0 0 2px #c4b5fd; }
+  33%  { box-shadow: 0 0 0 2px #f0abfc; }
+  66%  { box-shadow: 0 0 0 2px #c4b5fd; }
+  100% { box-shadow: 0 0 0 2px #c4b5fd; }
+}
+
+/* ══════════════════════════════════════
+   CONTACT LINKS HOVER
+══════════════════════════════════════ */
+.contact-link {
+  position: relative;
+  text-decoration: none;
+  color: #36213E;
+  transition: color 0.3s;
+}
+.contact-link::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 0; height: 1.5px;
+  background: linear-gradient(90deg, #c4b5fd, #f0abfc, #c4b5fd);
+  background-size: 200% auto;
+  transition: width 0.35s ease;
+  animation: shimmer 3.5s linear infinite;
+}
+.contact-link:hover { color: #7c3aed; }
+.contact-link:hover::after { width: 100%; }
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width: 480px) {
+  .divider h2 {
+    white-space: normal;
+    font-size: 1.35rem;
+  }
 }

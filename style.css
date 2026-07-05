@@ -5,7 +5,12 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'DM Sans', sans-serif;
-  background-color: #000000;
+  background-color: #f0eef4;   /* light theme (default) */
+  color: #36213E;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+html.dark body {
+  background-color: #000000;   /* dark theme */
   color: #ffffff;
 }
 
@@ -218,6 +223,77 @@ body {
 }
 .contact-link:hover { color: #7c3aed; }
 .contact-link:hover::after { width: 100%; }
+
+/* ══════════════════════════════════════
+   REVEAL ON SCROLL
+══════════════════════════════════════ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-reveal].in-view {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1 !important; transform: none !important; transition: none; }
+}
+
+/* ══════════════════════════════════════
+   LIGHT THEME OVERRIDES
+   ── ponytail: remap the white-on-dark utilities to dark-on-light in ONE place
+   instead of adding dark: variants to ~30 elements across two pages. The 3
+   buttons that must stay white use inline color:#fff, which beats these rules.
+══════════════════════════════════════ */
+html:not(.dark) .nav-bar { background-color: rgba(240,238,244,0.85) !important; }
+
+html:not(.dark) .nav-link { color: rgba(54,33,62,0.85); }
+html:not(.dark) .nav-link:hover { color: #36213E; }
+html:not(.dark) .nav-link::after { background: #36213E; }
+
+html:not(.dark) .divider::before,
+html:not(.dark) .divider::after { background: rgba(54,33,62,0.20); }
+
+/* Name gradient: swap the white stops for dark so it stays visible on light */
+html:not(.dark) .name-accent {
+  background-image: linear-gradient(90deg,#36213E,#7c3aed,#c026d3,#7c3aed,#36213E);
+}
+
+/* Ghost buttons: white text is invisible on light — go dark */
+html:not(.dark) .btn-ghost { color: #36213E; }
+html:not(.dark) .btn-ghost:hover { color: #36213E; }
+
+/* Utility remaps (text / border / bg) */
+html:not(.dark) .text-white       { color: #36213E; }
+html:not(.dark) .text-white\/90   { color: rgba(54,33,62,0.88); }
+html:not(.dark) .text-white\/85   { color: rgba(54,33,62,0.82); }
+html:not(.dark) .text-white\/80   { color: rgba(54,33,62,0.78); }
+html:not(.dark) .text-white\/70   { color: rgba(54,33,62,0.66); }
+html:not(.dark) .text-white\/65   { color: rgba(54,33,62,0.60); }
+html:not(.dark) .text-white\/60   { color: rgba(54,33,62,0.55); }
+html:not(.dark) .text-white\/55   { color: rgba(54,33,62,0.52); }
+html:not(.dark) .text-white\/50   { color: rgba(54,33,62,0.48); }
+html:not(.dark) .border-white\/20 { border-color: rgba(54,33,62,0.20); }
+html:not(.dark) .border-white\/10 { border-color: rgba(54,33,62,0.12); }
+html:not(.dark) .bg-white\/5      { background-color: rgba(54,33,62,0.045); }
+
+/* ══════════════════════════════════════
+   THEME TOGGLE BUTTON
+══════════════════════════════════════ */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem; height: 2.25rem;
+  border-radius: 9999px;
+  color: inherit;
+  transition: background-color 0.2s;
+}
+.theme-toggle:hover { background-color: rgba(128,128,128,0.18); }
+.theme-toggle .sun  { display: none; }
+html.dark .theme-toggle .sun  { display: block; }
+html.dark .theme-toggle .moon { display: none; }
 
 /* ══════════════════════════════════════
    RESPONSIVE

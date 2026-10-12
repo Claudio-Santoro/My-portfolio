@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Theme: apply before paint to avoid flash. Default dark unless user chose light. -->
+  <script>
+    if (localStorage.theme !== 'light') document.documentElement.classList.add('dark');
+  </script>
+
+  <!-- SEO -->
+  <meta name="description" content="Hanging Around — a social events platform connecting people around shared hobbies in Sicily. Web app (PWA) and React Native client on a Nest.js + Prisma + PostgreSQL backend, live on Render behind Cloudflare. Case study by Claudio Santoro.">
+  <meta name="author" content="Claudio Santoro">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://claudio-santoro.github.io/My-portfolio/en/progetti/hanging-around.html">
+  <link rel="alternate" hreflang="it" href="https://claudio-santoro.github.io/My-portfolio/progetti/hanging-around.html">
+  <link rel="alternate" hreflang="en" href="https://claudio-santoro.github.io/My-portfolio/en/progetti/hanging-around.html">
+  <link rel="alternate" hreflang="x-default" href="https://claudio-santoro.github.io/My-portfolio/progetti/hanging-around.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hanging Around — Nest.js + PWA case study">
+  <meta property="og:description" content="How we built a social events platform for Sicily: PWA web app and React Native client, Nest.js + Prisma backend on PostgreSQL, verified QR check-in, deployed on Render and Cloudflare.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://claudio-santoro.github.io/My-portfolio/en/progetti/hanging-around.html">
+  <meta property="og:image" content="https://claudio-santoro.github.io/My-portfolio/assets/logonuovo.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <title>Hanging Around — Case Study · Claudio Santoro</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: { tropical: '#36213E', grey: '#63768D' },
+          fontFamily: {
+            display: ['"Playfair Display"', 'serif'],
+            sans:    ['"DM Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="../../style.css">
+
+  <!-- Reveal-on-scroll (self-contained, no libraries) -->
+  <style>
+    [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+    [data-reveal].in-view{opacity:1;transform:none}
+    @media (prefers-reduced-motion: reduce){
+      [data-reveal]{opacity:1 !important;transform:none !important;transition:none}
+    }
+
+    /* Architecture flow diagram — pure CSS, no image.
+       Mobile-first: vertical stack with down-arrows; horizontal row only when it fits. */
+    .flow{display:flex;flex-direction:column;align-items:stretch;gap:.75rem}
+    .flow-node{
+      background:#fff;border-radius:1rem;
+      padding:1rem 1.15rem;color:#36213E;box-shadow:0 8px 24px rgba(0,0,0,.12);
+    }
+    .flow-node .kind{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#63768D}
+    .flow-node .title{font-weight:600;margin-top:.15rem}
+    .flow-node .desc{font-size:.8rem;color:#5a5a6a;margin-top:.4rem;line-height:1.45}
+    .flow-arrow{
+      display:flex;align-items:center;justify-content:center;
+      color:rgba(255,255,255,.55);font-size:1.4rem;line-height:1;
+      transform:rotate(90deg);   /* points down when stacked */
+    }
+    html:not(.dark) .flow-arrow{color:rgba(54,33,62,.5)}
+    @media (min-width:880px){
+      .flow{flex-direction:row}
+      .flow-node{flex:1 1 0;min-width:0}
+      .flow-arrow{transform:none}   /* points right in a row */
+    }
+
+    /* Feature / challenge list */
+    .feature-li{display:flex;gap:.75rem;align-items:flex-start}
+    .feature-li svg{flex-shrink:0;margin-top:.15rem}
+
+    /* Screenshot gallery — centered row that scroll-snaps only when it overflows (mobile) */
+    .gallery{
+      display:flex;gap:1rem;justify-content:safe center;overflow-x:auto;
+      scroll-snap-type:x mandatory;padding:.25rem .25rem 1rem;
+      -webkit-overflow-scrolling:touch;
+      scrollbar-width:thin;scrollbar-color:rgba(128,128,128,.5) transparent;
+    }
+    .gallery-item{
+      scroll-snap-align:center;flex:0 0 auto;
+      height:clamp(340px,58vh,540px);width:auto;
+      border-radius:1.6rem;background:#000;
+      box-shadow:0 20px 40px rgba(0,0,0,.35);
+      border:1px solid rgba(128,128,128,.25);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen font-sans">
+
+  <!-- ════════════ NAV ════════════ -->
+  <nav class="nav-bar fixed top-0 inset-x-0 z-50 border-b border-white/10">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="../index.html" class="nav-link flex items-center gap-2 text-sm font-medium">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+      </a>
+      <div class="flex items-center gap-4">
+        <span class="font-display text-lg name-accent">Claudio Santoro</span>
+        <a href="../../progetti/hanging-around.html" class="nav-link text-sm font-medium" hreflang="it" lang="it" aria-label="Versione italiana">IT</a>
+        <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle light/dark theme">
+          <svg class="sun w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+          </svg>
+          <svg class="moon w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════ HERO ════════════ -->
+  <header class="max-w-4xl mx-auto px-6 pt-32 pb-16">
+    <p class="fade-up text-sm tracking-widest uppercase font-medium mb-4 text-white/70">
+      Case Study · Social Events Platform · Web &amp; Mobile
+    </p>
+    <h1 class="fade-up delay-1 font-display leading-none mb-6 text-white"
+        style="font-size: clamp(2.2rem, 6vw, 4rem);">
+      <span class="name-accent">Hanging&nbsp;Around</span>
+    </h1>
+    <p class="fade-up delay-2 text-base md:text-lg leading-relaxed mb-8 max-w-2xl text-white/90">
+      A social app that turns shared passions into real-world meetups. People discover hobbies
+      and activities happening around them and join others nearby — designed for the Sicilian
+      territory to fight social isolation and grow local communities. Live in production at
+      <a href="https://hanging-around.com" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-80">hanging-around.com</a>.
+    </p>
+
+    <div class="fade-up delay-3 flex gap-2 flex-wrap mb-8">
+      <span class="text-xs px-3 py-1 rounded-full border border-tropical/25 text-tropical/80 dark:border-white/25 dark:text-white/85">Nest.js</span>
+      <span class="text-xs px-3 py-1 rounded-full border border-tropical/25 text-tropical/80 dark:border-white/25 dark:text-white/85">TypeScript</span>
+      <span class="text-xs px-3 py-1 rounded-full border border-tropical/25 text-tropical/80 dark:border-white/25 dark:text-white/85">Prisma</span>
+      <span class="text-xs px-3 py-1 rounded-full border border-tropical/25 text-tropical/80 dark:border-white/25 dark:text-white/85">PostgreSQL</span>
+      <span class="text-xs px-3 py-1 rounded-full border border-tropical/25 text-tropical/80 dark:border-white/25 dark:text-white/85">Tailwind CSS</span>
+      <span class="text-xs px-3 py-1 rounded-full border border-tropical/25 text-tropical/80 dark:border-white/25 dark:text-white/85">PWA</span>
+      <span class="text-xs px-3 py-1 rounded-full border border-tropical/25 text-tropical/80 dark:border-white/25 dark:text-white/85">React Native</span>
+      <span class="text-xs px-3 py-1 rounded-full border border-tropical/25 text-tropical/80 dark:border-white/25 dark:text-white/85">Expo</span>
+      <span class="text-xs px-3 py-1 rounded-full border border-tropical/25 text-tropical/80 dark:border-white/25 dark:text-white/85">Render</span>
+      <span class="text-xs px-3 py-1 rounded-full border border-tropical/25 text-tropical/80 dark:border-white/25 dark:text-white/85">Cloudflare</span>
+    </div>
+
+    <div class="fade-up delay-3 flex gap-3 flex-wrap mb-12">
+      <a href="https://github.com/sebastian0x7b/HangingAround" target="_blank" rel="noopener noreferrer"
+         class="flex items-center gap-2 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:opacity-90 transition"
+         style="background-color:#36213E;color:#fff;">
+        <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+        </svg>
+        View on GitHub
+      </a>
+      <a href="https://hanging-around.com" target="_blank" rel="noopener noreferrer"
+         class="btn-ghost flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-full">
+        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/>
+        </svg>
+        Visit the live site
+      </a>
+    </div>
+
+    <!-- Screenshot gallery -->
+    <div class="fade-up delay-4 gallery">
+      <img src="../../assets/hanging-around/landing.webp" alt="Hanging Around — landing page on mobile" class="gallery-item" loading="lazy"/>
+      <img src="../../assets/hanging-around/homepage.webp" alt="Hanging Around — home after login on mobile" class="gallery-item" loading="lazy"/>
+      <img src="../../assets/hanging-around/esplora.webp" alt="Hanging Around — explore events with search, filters and map on mobile" class="gallery-item" loading="lazy"/>
+      <img src="../../assets/hanging-around/evento.webp" alt="Hanging Around — event detail page on mobile" class="gallery-item" loading="lazy"/>
+      <img src="../../assets/hanging-around/crea.webp" alt="Hanging Around — create-event editor on mobile" class="gallery-item" loading="lazy"/>
+      <img src="../../assets/hanging-around/eventi.webp" alt="Hanging Around — your events dashboard on mobile" class="gallery-item" loading="lazy"/>
+      <img src="../../assets/hanging-around/profilo.webp" alt="Hanging Around — edit profile on mobile" class="gallery-item" loading="lazy"/>
+      <img src="../../assets/hanging-around/notifiche.webp" alt="Hanging Around — notifications and push settings on mobile" class="gallery-item" loading="lazy"/>
+      <img src="../../assets/hanging-around/badge.webp" alt="Hanging Around — badge catalogue on mobile" class="gallery-item" loading="lazy"/>
+      <img src="../../assets/hanging-around/presenze.webp" alt="Hanging Around — organiser attendance and live QR on mobile" class="gallery-item" loading="lazy"/>
+    </div>
+    <p class="text-center text-xs mt-2 text-white/50">Mobile view of hanging-around.com — landing and private areas</p>
+  </header>
+
+  <!-- ════════════ THE PROBLEM ════════════ -->
+  <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
+    <div class="divider mb-8">
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">The Problem</h2>
+    </div>
+    <div class="max-w-2xl space-y-4 text-white/85 leading-relaxed">
+      <p>
+        Sicily is a territory marked by strong social closure and low <em class="not-italic text-white">bridging
+        social capital</em> — people stay inside tight, familiar circles and rarely connect across groups.
+        For anyone new to a place, or simply looking to pursue a hobby with others, there was no simple way
+        to find who is doing <strong class="text-white font-semibold">what</strong>, <strong class="text-white font-semibold">where</strong>,
+        and <strong class="text-white font-semibold">when</strong>.
+      </p>
+      <p>
+        Existing social networks optimise for online engagement, not for actually meeting up.
+        The need was a tool that starts from a shared interest and ends with people in the same room.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════ THE IDEA ════════════ -->
+  <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
+    <div class="divider mb-8">
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">The Idea</h2>
+    </div>
+    <div class="max-w-2xl space-y-4 text-white/85 leading-relaxed">
+      <p>
+        Hanging Around was born from a simple question: <em class="not-italic text-white">"what if joining
+        an activity near you was as easy as liking a post?"</em> Instead of feeds, the app is organised
+        around <strong class="text-white font-semibold">interests</strong> and <strong class="text-white font-semibold">local
+        activities</strong> you can actually attend.
+      </p>
+      <div class="grid sm:grid-cols-3 gap-4 pt-2">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+          <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Goal</p>
+          <p class="text-sm">Turn shared passions into real meetups.</p>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+          <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Target</p>
+          <p class="text-sm">Young people & newcomers in Sicilian towns.</p>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
+          <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Outcome</p>
+          <p class="text-sm">Stronger, wider local communities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ ARCHITECTURE ════════════ -->
+  <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
+    <div class="divider mb-8">
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Architecture</h2>
+    </div>
+
+    <p class="max-w-2xl text-white/85 leading-relaxed mb-8">
+      Two clients — a <strong class="text-white font-semibold">web app</strong> (HTML, CSS, vanilla JS, Tailwind, installable as a
+      <strong class="text-white font-semibold">PWA</strong>) and a <strong class="text-white font-semibold">React Native / Expo</strong> app —
+      share one <strong class="text-white font-semibold">Nest.js</strong> REST API. Nest also serves the static web app, so the whole
+      product ships as a single service. Data lives in <strong class="text-white font-semibold">PostgreSQL</strong> (Neon) through
+      <strong class="text-white font-semibold">Prisma</strong>; media go to Cloudinary with server-signed uploads, emails through Resend.
+    </p>
+
+    <!-- Request flow diagram -->
+    <p class="text-xs uppercase tracking-widest text-white/50 mb-3">Request flow — from a tap to the database and back</p>
+    <div class="flow mb-4">
+      <div class="flow-node">
+        <div class="kind">Clients</div>
+        <div class="title">Web PWA · Expo app</div>
+        <div class="desc">User taps "Join". The client sends an HTTPS request with the JWT attached.</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div class="kind">Edge</div>
+        <div class="title">Cloudflare → Render</div>
+        <div class="desc">DNS, TLS and proxy on Cloudflare; the Nest.js service runs on Render.</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div class="kind">Backend</div>
+        <div class="title">Controller → Service</div>
+        <div class="desc">Guards check the JWT, DTOs validate input, the service applies capacity, waitlist and ownership rules.</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-node">
+        <div class="kind">Data</div>
+        <div class="title">Prisma → PostgreSQL</div>
+        <div class="desc">Typed queries on a 21-model schema; migrations versioned in the repo.</div>
+      </div>
+    </div>
+    <p class="text-sm text-white/60 max-w-2xl">
+      The JSON response travels back up the same chain and the client updates the UI. Each layer has one job,
+      which keeps the code testable and easy to reason about.
+    </p>
+
+    <!-- Layer breakdown -->
+    <div class="grid md:grid-cols-2 gap-4 mt-8">
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+        <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Web</p>
+        <p class="text-sm text-white/85">HTML, CSS and ES-module JavaScript with Tailwind CSS v4 — service worker, web manifest and push notifications; Leaflet + OpenStreetMap for the event map. E2E tests with Playwright.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+        <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Mobile</p>
+        <p class="text-sm text-white/85">React Native with Expo and Expo Router — the same API, native QR scanning and location for check-in.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+        <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Backend</p>
+        <p class="text-sm text-white/85">Nest.js 11 — modules for auth, users, events, badges, notifications, uploads, reports, newsletter and the AI assistant. JWT + Passport, Helmet, rate limiting, Jest tests.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+        <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Data &amp; services</p>
+        <p class="text-sm text-white/85">PostgreSQL on Neon via Prisma 7 · Cloudinary for images · Resend for email · Web Push · a Python RAG voice assistant that reads data directly but writes only through the API with the user's JWT.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ TECHNOLOGIES ════════════ -->
+  <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
+    <div class="divider mb-8">
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Technologies</h2>
+    </div>
+
+    <div class="space-y-4">
+      <div class="bg-white rounded-2xl p-6 shadow-md">
+        <h3 class="font-display text-xl text-tropical mb-2">Nest.js</h3>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Why:</strong> an opinionated structure (modules, controllers, services, dependency injection) that scales cleanly as features grow.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">How:</strong> Controller → Service layers per domain, DTO validation, JWT guards, throttling and Helmet; it also serves the static web app.</p>
+        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Payoff:</strong> a predictable, testable backend where every responsibility lives in one obvious place.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 shadow-md">
+        <h3 class="font-display text-xl text-tropical mb-2">Prisma + PostgreSQL</h3>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Why:</strong> the data is relational — users, events, attendances, follows, badges, reviews — and the schema should be the single source of truth.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">How:</strong> 21 models with versioned migrations and generated TypeScript types, hosted on Neon serverless Postgres.</p>
+        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Payoff:</strong> type-safe queries end to end and zero database ops.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 shadow-md">
+        <h3 class="font-display text-xl text-tropical mb-2">Web app (PWA) + Tailwind CSS</h3>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Why:</strong> the website is the storefront and must be fast, indexable and installable — no framework build needed.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">How:</strong> vanilla ES modules, Tailwind CSS v4, service worker for offline and push notifications, optimised WebP images, Playwright tests.</p>
+        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Payoff:</strong> one deploy, no client build step, and a mobile experience close to a native app.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 shadow-md">
+        <h3 class="font-display text-xl text-tropical mb-2">React Native + Expo</h3>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Why:</strong> one codebase for iOS and Android, with native modules (camera, location) ready to use.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">How:</strong> Expo Router screens on top of a thin API client that attaches the auth token to every request; builds with EAS.</p>
+        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Payoff:</strong> fast iteration and a native feel without maintaining two separate apps.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 shadow-md">
+        <h3 class="font-display text-xl text-tropical mb-2">Deploy: Render + Cloudflare</h3>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Why:</strong> a managed Node host with HTTPS and a health check, fronted by a CDN and DNS we control.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">How:</strong> the Nest.js service runs on Render; Cloudflare handles DNS and proxying for hanging-around.com, and the Render subdomain permanently redirects (308) to the canonical domain.</p>
+        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Payoff:</strong> a real production URL, one canonical domain for SEO, and no servers to maintain.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ FEATURES ════════════ -->
+  <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
+    <div class="divider mb-8">
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Key Features</h2>
+    </div>
+    <ul class="grid sm:grid-cols-2 gap-4 max-w-3xl">
+      <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
+        <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+        <span><strong class="text-white">Verified check-in</strong> — a QR code signed with HMAC that rotates every 45 seconds, plus a geofence: attendance is proven, not declared.</span>
+      </li>
+      <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
+        <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+        <span><strong class="text-white">Waitlist with auto-promotion</strong> — full events queue new sign-ups and promote them, with a notification, when a spot frees up.</span>
+      </li>
+      <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
+        <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+        <span><strong class="text-white">Map &amp; category discovery</strong> — explore events on a Leaflet / OpenStreetMap map, filtered by category and sub-category.</span>
+      </li>
+      <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
+        <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+        <span><strong class="text-white">Levels &amp; badges</strong> — experience level per category and ~30 badges earned from real attendance.</span>
+      </li>
+      <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
+        <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+        <span><strong class="text-white">Follows &amp; push notifications</strong> — follow requests, per-type notification preferences and Web Push.</span>
+      </li>
+      <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
+        <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+        <span><strong class="text-white">Verified reviews</strong> — only people who actually checked in can review an event.</span>
+      </li>
+      <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
+        <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+        <span><strong class="text-white">AI voice assistant</strong> — ask by voice what to do tonight and get real events back (RAG over the event data).</span>
+      </li>
+      <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
+        <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+        <span><strong class="text-white">Privacy by design</strong> — GDPR data export, versioned consent, private profiles and self-invalidating password-reset tokens.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ════════════ CHALLENGES ════════════ -->
+  <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
+    <div class="divider mb-8">
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Challenges & Learnings</h2>
+    </div>
+    <div class="space-y-4 max-w-3xl">
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+        <p class="text-white font-semibold mb-1">Making attendance impossible to fake</p>
+        <p class="text-sm text-white/80"><strong>Solved:</strong> a static QR can be photographed and forwarded, so the token is server-signed, time-boxed and rotates every 45 s; if location fails, the check-in stays pending for the organiser instead of blocking the user. <strong>Learned:</strong> the hard, boring piece is what gives the rest of the product its value.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+        <p class="text-white font-semibold mb-1">Letting an AI act without opening a second door</p>
+        <p class="text-sm text-white/80"><strong>Solved:</strong> the assistant reads data directly but every write goes through the Nest.js API with the user's own JWT. <strong>Learned:</strong> authorization should live in exactly one place.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+        <p class="text-white font-semibold mb-1">Going to production</p>
+        <p class="text-sm text-white/80"><strong>Solved:</strong> health check endpoint, trust-proxy and rate-limit tuning behind Cloudflare, canonical-domain redirect from Render, secrets only in environment variables. <strong>Learned:</strong> shipping is its own feature — and it has a checklist.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+        <p class="text-white font-semibold mb-1">Structuring a growing Nest.js backend</p>
+        <p class="text-sm text-white/80"><strong>Solved:</strong> committed to one module per domain with the Controller/Service split. <strong>Learned:</strong> putting each responsibility in one obvious place pays off the moment more developers join.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ FUTURE ════════════ -->
+  <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
+    <div class="divider mb-8">
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">What's Next</h2>
+    </div>
+    <ul class="grid sm:grid-cols-2 gap-3 max-w-3xl text-sm text-white/85">
+      <li class="bg-white/5 border border-white/10 rounded-2xl p-4">Ticketing and payments with Stripe.</li>
+      <li class="bg-white/5 border border-white/10 rounded-2xl p-4">Publishing the Expo app on the App Store and Play Store.</li>
+      <li class="bg-white/5 border border-white/10 rounded-2xl p-4">An organiser dashboard: attendance, no-shows and aggregated reviews.</li>
+      <li class="bg-white/5 border border-white/10 rounded-2xl p-4">Personalised recommendations from the attendance + interests graph.</li>
+    </ul>
+  </section>
+
+  <!-- ════════════ FOOTER CTA ════════════ -->
+  <section class="max-w-4xl mx-auto px-6 py-16 text-center" data-reveal>
+    <p class="font-display text-2xl md:text-3xl text-white mb-6">Want to see it in action?</p>
+    <div class="flex gap-3 flex-wrap justify-center">
+      <a href="https://hanging-around.com" target="_blank" rel="noopener noreferrer"
+         class="btn-ghost text-sm font-medium px-6 py-3 rounded-full">Visit the live site</a>
+      <a href="https://github.com/sebastian0x7b/HangingAround" target="_blank" rel="noopener noreferrer"
+         class="btn-ghost text-sm font-medium px-6 py-3 rounded-full">View on GitHub</a>
+      <a href="../index.html#contact" class="btn-ghost text-sm font-medium px-6 py-3 rounded-full">Get in touch</a>
+    </div>
+  </section>
+
+  <footer class="text-center py-8 text-xs border-t border-white/10 text-white/60">
+    © 2026 Claudio Santoro — <a href="../index.html" class="underline hover:text-white">Back to portfolio</a>
+  </footer>
+
+  <!-- Reveal-on-scroll (native IntersectionObserver, no libraries) -->
+  <script>
+    function toggleTheme() {
+      const dark = document.documentElement.classList.toggle('dark');
+      localStorage.theme = dark ? 'dark' : 'light';
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        io.unobserve(e.target);
+      }
+    }, { threshold: 0.12 });
+    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -10,13 +10,17 @@
   </script>
 
   <!-- SEO -->
-  <meta name="description" content="Bellavia Egadi Charter — a multilingual showcase site for RIB boat tours to the Egadi Islands. React + TypeScript, Vite, build-time prerendering, Docker. Case study by Claudio Santoro.">
+  <meta name="description" content="Bellavia Egadi Charter — sito vetrina multilingue per escursioni in gommone alle Isole Egadi. React + TypeScript, Vite, prerendering in fase di build, Docker. Case study di Claudio Santoro.">
   <meta name="author" content="Claudio Santoro">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://claudio-santoro.github.io/My-portfolio/progetti/egadicharter.html">
+  <link rel="alternate" hreflang="it" href="https://claudio-santoro.github.io/My-portfolio/progetti/egadicharter.html">
+  <link rel="alternate" hreflang="en" href="https://claudio-santoro.github.io/My-portfolio/en/progetti/egadicharter.html">
+  <link rel="alternate" hreflang="x-default" href="https://claudio-santoro.github.io/My-portfolio/progetti/egadicharter.html">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Bellavia Egadi Charter — React + TypeScript case study">
-  <meta property="og:description" content="A fast, SEO-friendly tourism site in 7 languages: React, TypeScript, Vite, static prerendering, live sea forecast, Docker + Nginx + Caddy.">
+  <meta property="og:title" content="Bellavia Egadi Charter — case study React + TypeScript">
+  <meta property="og:description" content="Un sito turistico veloce e ottimizzato per la SEO in 7 lingue: React, TypeScript, Vite, prerendering statico, previsioni del mare in tempo reale, Docker + Nginx + Caddy.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://claudio-santoro.github.io/My-portfolio/progetti/egadicharter.html">
   <meta property="og:image" content="https://claudio-santoro.github.io/My-portfolio/assets/egadicharter/home-desktop.webp">
@@ -108,7 +112,8 @@
       </a>
       <div class="flex items-center gap-4">
         <span class="font-display text-lg name-accent">Claudio Santoro</span>
-        <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle light/dark theme">
+        <a href="../en/progetti/egadicharter.html" class="nav-link text-sm font-medium" hreflang="en" lang="en" aria-label="English version">EN</a>
+        <button onclick="toggleTheme()" class="theme-toggle" aria-label="Cambia tema chiaro/scuro">
           <svg class="sun w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="4"/>
             <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
@@ -124,16 +129,16 @@
   <!-- ════════════ HERO ════════════ -->
   <header class="max-w-4xl mx-auto px-6 pt-32 pb-16">
     <p class="fade-up text-sm tracking-widest uppercase font-medium mb-4 text-white/70">
-      Case Study · Tourism Website · React + TypeScript
+      Case Study · Sito turistico · React + TypeScript
     </p>
     <h1 class="fade-up delay-1 font-display leading-none mb-6 text-white"
         style="font-size: clamp(2.2rem, 6vw, 4rem);">
       <span class="name-accent">Bellavia Egadi&nbsp;Charter</span>
     </h1>
     <p class="fade-up delay-2 text-base md:text-lg leading-relaxed mb-8 max-w-2xl text-white/90">
-      A showcase website for a local charter business running RIB boat tours from Trapani to the
-      Egadi Islands — Favignana and Levanzo. Fast, multilingual and built to turn a visitor into a
-      WhatsApp message in a couple of taps.
+      Sito vetrina per un'attività locale di charter che organizza escursioni in gommone da Trapani alle
+      Isole Egadi — Favignana e Levanzo. Veloce, multilingue e pensato per trasformare un visitatore in un
+      messaggio WhatsApp in un paio di tap.
     </p>
 
     <div class="fade-up delay-3 flex gap-2 flex-wrap mb-8">
@@ -142,7 +147,7 @@
       <span class="text-xs px-3 py-1 rounded-full border border-tropical/25 text-tropical/80 dark:border-white/25 dark:text-white/85">Vite</span>
       <span class="text-xs px-3 py-1 rounded-full border border-tropical/25 text-tropical/80 dark:border-white/25 dark:text-white/85">React Router</span>
       <span class="text-xs px-3 py-1 rounded-full border border-tropical/25 text-tropical/80 dark:border-white/25 dark:text-white/85">CSS Modules</span>
-      <span class="text-xs px-3 py-1 rounded-full border border-tropical/25 text-tropical/80 dark:border-white/25 dark:text-white/85">SSR prerendering</span>
+      <span class="text-xs px-3 py-1 rounded-full border border-tropical/25 text-tropical/80 dark:border-white/25 dark:text-white/85">Prerendering SSR</span>
       <span class="text-xs px-3 py-1 rounded-full border border-tropical/25 text-tropical/80 dark:border-white/25 dark:text-white/85">Docker</span>
       <span class="text-xs px-3 py-1 rounded-full border border-tropical/25 text-tropical/80 dark:border-white/25 dark:text-white/85">Nginx</span>
       <span class="text-xs px-3 py-1 rounded-full border border-tropical/25 text-tropical/80 dark:border-white/25 dark:text-white/85">Caddy</span>
@@ -156,55 +161,55 @@
         <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
         </svg>
-        View on GitHub
+        Vedi su GitHub
       </a>
       <!-- ponytail: no "Live site" button until the production domain is up -->
     </div>
 
     <!-- Screenshot gallery: mobile -->
     <div class="fade-up delay-4 gallery">
-      <img src="../assets/egadicharter/home-mobile.webp" alt="Bellavia Egadi Charter — home page on mobile" class="gallery-item" loading="lazy"/>
-      <img src="../assets/egadicharter/tour-mobile.webp" alt="Bellavia Egadi Charter — tour detail with sticky booking bar on mobile" class="gallery-item" loading="lazy"/>
-      <img src="../assets/egadicharter/contatti-mobile.webp" alt="Bellavia Egadi Charter — contact form on mobile" class="gallery-item" loading="lazy"/>
+      <img src="../assets/egadicharter/home-mobile.webp" alt="Bellavia Egadi Charter — home page da mobile" class="gallery-item" loading="lazy"/>
+      <img src="../assets/egadicharter/tour-mobile.webp" alt="Bellavia Egadi Charter — dettaglio escursione con barra di prenotazione fissa da mobile" class="gallery-item" loading="lazy"/>
+      <img src="../assets/egadicharter/contatti-mobile.webp" alt="Bellavia Egadi Charter — modulo contatti da mobile" class="gallery-item" loading="lazy"/>
     </div>
-    <p class="text-center text-xs mt-2 mb-8 text-white/50">Mobile preview</p>
+    <p class="text-center text-xs mt-2 mb-8 text-white/50">Anteprima mobile</p>
 
     <!-- Screenshot gallery: desktop -->
     <div class="fade-up delay-4 gallery">
-      <img src="../assets/egadicharter/home-desktop.webp" alt="Bellavia Egadi Charter — home page on desktop" class="gallery-item wide" loading="lazy"/>
-      <img src="../assets/egadicharter/tour-desktop.webp" alt="Bellavia Egadi Charter — tour detail page on desktop" class="gallery-item wide" loading="lazy"/>
-      <img src="../assets/egadicharter/contatti-desktop.webp" alt="Bellavia Egadi Charter — contact page on desktop" class="gallery-item wide" loading="lazy"/>
+      <img src="../assets/egadicharter/home-desktop.webp" alt="Bellavia Egadi Charter — home page da desktop" class="gallery-item wide" loading="lazy"/>
+      <img src="../assets/egadicharter/tour-desktop.webp" alt="Bellavia Egadi Charter — dettaglio escursione da desktop" class="gallery-item wide" loading="lazy"/>
+      <img src="../assets/egadicharter/contatti-desktop.webp" alt="Bellavia Egadi Charter — pagina contatti da desktop" class="gallery-item wide" loading="lazy"/>
     </div>
-    <p class="text-center text-xs mt-2 text-white/50">Desktop preview</p>
+    <p class="text-center text-xs mt-2 text-white/50">Anteprima desktop</p>
   </header>
 
   <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
     <div class="divider mb-8">
-      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">The Brief</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">La richiesta</h2>
     </div>
     <div class="max-w-2xl space-y-4 text-white/85 leading-relaxed">
       <p>
-        A small local charter in Trapani needed a website that tourists would actually find and use:
-        clear tours and prices, real photos, and a <strong class="text-white font-semibold">direct line to the skipper</strong>
-        via WhatsApp or phone.
+        Un piccolo charter di Trapani aveva bisogno di un sito che i turisti trovassero e usassero davvero:
+        escursioni e prezzi chiari, foto vere e un <strong class="text-white font-semibold">contatto diretto con lo skipper</strong>
+        via WhatsApp o telefono.
       </p>
       <p>
-        Most visitors are foreign and on a phone, so the site had to be <strong class="text-white font-semibold">fast</strong>,
-        <strong class="text-white font-semibold">multilingual</strong> and <strong class="text-white font-semibold">indexable</strong> —
-        and the owner had to be able to change prices, photos and texts without touching a component.
+        La maggior parte dei visitatori è straniera e naviga da smartphone, quindi il sito doveva essere <strong class="text-white font-semibold">veloce</strong>,
+        <strong class="text-white font-semibold">multilingue</strong> e <strong class="text-white font-semibold">indicizzabile</strong> —
+        e il titolare doveva poter cambiare prezzi, foto e testi senza toccare un componente.
       </p>
       <div class="grid sm:grid-cols-3 gap-4 pt-2">
         <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
-          <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Goal</p>
-          <p class="text-sm">More direct bookings via WhatsApp and phone.</p>
+          <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Obiettivo</p>
+          <p class="text-sm">Più prenotazioni dirette via WhatsApp e telefono.</p>
         </div>
         <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
-          <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Audience</p>
-          <p class="text-sm">Tourists in Trapani, mostly on mobile, in 7 languages.</p>
+          <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Pubblico</p>
+          <p class="text-sm">Turisti a Trapani, soprattutto da mobile, in 7 lingue.</p>
         </div>
         <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
-          <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Constraint</p>
-          <p class="text-sm">No backend, no CMS, cheap to host.</p>
+          <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Vincoli</p>
+          <p class="text-sm">Niente backend, niente CMS, hosting economico.</p>
         </div>
       </div>
     </div>
@@ -212,157 +217,157 @@
 
   <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
     <div class="divider mb-8">
-      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Architecture</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Architettura</h2>
     </div>
 
     <p class="max-w-2xl text-white/85 leading-relaxed mb-8">
-      A <strong class="text-white font-semibold">React + TypeScript</strong> app built with <strong class="text-white font-semibold">Vite</strong>.
-      At build time every route is rendered on the server side in every language and saved as
-      <strong class="text-white font-semibold">static HTML</strong>, then hydrated in the browser — the SEO of a static site with the
-      developer experience of React. The output is served by <strong class="text-white font-semibold">Nginx</strong> in a non-root
-      Docker container, with <strong class="text-white font-semibold">Caddy</strong> in front for automatic HTTPS.
+      Un'app <strong class="text-white font-semibold">React + TypeScript</strong> costruita con <strong class="text-white font-semibold">Vite</strong>.
+      In fase di build ogni pagina viene renderizzata lato server in ogni lingua e salvata come
+      <strong class="text-white font-semibold">HTML statico</strong>, poi idratata nel browser — la SEO di un sito statico con la
+      comodità di React. Il risultato è servito da <strong class="text-white font-semibold">Nginx</strong> in un container Docker
+      non-root, con <strong class="text-white font-semibold">Caddy</strong> davanti per l'HTTPS automatico.
     </p>
 
-    <p class="text-xs uppercase tracking-widest text-white/50 mb-3">Build pipeline — from content to a page in the browser</p>
+    <p class="text-xs uppercase tracking-widest text-white/50 mb-3">Pipeline di build — dai contenuti alla pagina nel browser</p>
     <div class="flow mb-4">
       <div class="flow-node">
-        <div class="kind">Content</div>
+        <div class="kind">Contenuti</div>
         <div class="title">src/data + src/i18n</div>
-        <div class="desc">Prices, photos and contacts in typed data files; texts in one dictionary per language.</div>
+        <div class="desc">Prezzi, foto e contatti in file di dati tipizzati; testi in un dizionario per lingua.</div>
       </div>
       <div class="flow-arrow">→</div>
       <div class="flow-node">
         <div class="kind">Build</div>
         <div class="title">Vite + SSR prerender</div>
-        <div class="desc">Each route × 7 languages rendered to HTML with hreflang, canonical and structured data.</div>
+        <div class="desc">Ogni pagina × 7 lingue renderizzata in HTML con hreflang, canonical e dati strutturati.</div>
       </div>
       <div class="flow-arrow">→</div>
       <div class="flow-node">
-        <div class="kind">Output</div>
-        <div class="title">Static HTML</div>
-        <div class="desc">Plus sitemap.xml and robots.txt; React hydrates on load for the interactive parts.</div>
+        <div class="kind">Risultato</div>
+        <div class="title">HTML statico</div>
+        <div class="desc">Più sitemap.xml e robots.txt; React idrata la pagina al caricamento per le parti interattive.</div>
       </div>
       <div class="flow-arrow">→</div>
       <div class="flow-node">
-        <div class="kind">Serve</div>
+        <div class="kind">Hosting</div>
         <div class="title">Nginx · Caddy</div>
-        <div class="desc">Multi-stage Docker image, Nginx as non-root user, Caddy with Let's Encrypt TLS.</div>
+        <div class="desc">Immagine Docker multi-stage, Nginx come utente non-root, Caddy con TLS Let's Encrypt.</div>
       </div>
     </div>
     <p class="text-sm text-white/60 max-w-2xl">
-      No backend and no database: the only runtime call is to the free Open-Meteo marine API for the sea forecast.
+      Niente backend e niente database: l'unica chiamata a runtime è all'API marina gratuita di Open-Meteo per le previsioni del mare.
     </p>
   </section>
 
   <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
     <div class="divider mb-8">
-      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Technologies</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Tecnologie</h2>
     </div>
     <div class="space-y-4">
       <div class="bg-white rounded-2xl p-6 shadow-md">
         <h3 class="font-display text-xl text-tropical mb-2">React + TypeScript</h3>
-        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Why:</strong> reusable components (tour cards, slideshow, FAQ) and types that keep data and translations consistent.</p>
-        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">How:</strong> one Dict type derived from the Italian dictionary: every other language must match it, so a missing translation fails the build.</p>
-        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Payoff:</strong> content mistakes are caught before deploy, not by a customer.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Perché:</strong> componenti riutilizzabili (card delle escursioni, slideshow, FAQ) e tipi che tengono coerenti dati e traduzioni.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Come:</strong> un tipo Dict ricavato dal dizionario italiano: ogni altra lingua deve rispettarlo, quindi una traduzione mancante blocca la build.</p>
+        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Risultato:</strong> gli errori nei contenuti si scoprono prima del deploy, non da un cliente.</p>
       </div>
 
       <div class="bg-white rounded-2xl p-6 shadow-md">
         <h3 class="font-display text-xl text-tropical mb-2">Vite + build-time prerendering</h3>
-        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Why:</strong> a client-only SPA ships an empty HTML shell, which hurts SEO for a business that lives on Google.</p>
-        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">How:</strong> a server entry renders each route with React Router, a Node script writes the HTML files, the sitemap and robots.txt.</p>
-        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Payoff:</strong> every page is indexable in every language, with zero server-side runtime.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Perché:</strong> una SPA solo lato client consegna un HTML vuoto, e questo penalizza la SEO di un'attività che vive di Google.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Come:</strong> un entry server renderizza ogni pagina con React Router, uno script Node scrive i file HTML, la sitemap e robots.txt.</p>
+        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Risultato:</strong> ogni pagina è indicizzabile in ogni lingua, senza nessun runtime lato server.</p>
       </div>
 
       <div class="bg-white rounded-2xl p-6 shadow-md">
         <h3 class="font-display text-xl text-tropical mb-2">CSS Modules + design tokens</h3>
-        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Why:</strong> scoped styles with no runtime and no framework to learn for whoever edits it next.</p>
-        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">How:</strong> one .module.css per component, global colours, fonts and spacing as CSS custom properties, self-hosted fonts.</p>
-        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Payoff:</strong> a light bundle and styles that never leak between components.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Perché:</strong> stili isolati, senza runtime e senza un framework da imparare per chi metterà mano al codice dopo.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Come:</strong> un .module.css per componente, colori, font e spaziature globali come variabili CSS, font in self-hosting.</p>
+        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Risultato:</strong> un bundle leggero e stili che non si mescolano mai tra componenti.</p>
       </div>
 
       <div class="bg-white rounded-2xl p-6 shadow-md">
         <h3 class="font-display text-xl text-tropical mb-2">Docker + Nginx + Caddy</h3>
-        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Why:</strong> deploy on any VPS with one command, HTTPS included.</p>
-        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">How:</strong> multi-stage build (deps → build → nginx:alpine) running as a non-root user with a health check; Caddy obtains and renews certificates automatically.</p>
-        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Payoff:</strong> "git pull + docker compose up" is the whole release process.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Perché:</strong> deploy su qualsiasi VPS con un solo comando, HTTPS incluso.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Come:</strong> build multi-stage (deps → build → nginx:alpine) eseguita come utente non-root con health check; Caddy ottiene e rinnova i certificati da solo.</p>
+        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Risultato:</strong> "git pull + docker compose up" è l'intero processo di rilascio.</p>
       </div>
     </div>
   </section>
 
   <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
     <div class="divider mb-8">
-      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Key Features</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Funzionalità principali</h2>
     </div>
     <ul class="grid sm:grid-cols-2 gap-4 max-w-3xl">
       <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
         <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-        <span><strong class="text-white">7 languages</strong> — Italian, English, Polish, Spanish, French, German and Chinese, each with its own URL prefix.</span>
+        <span><strong class="text-white">7 lingue</strong> — italiano, inglese, polacco, spagnolo, francese, tedesco e cinese, ognuna con il suo prefisso nell'URL.</span>
       </li>
       <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
         <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-        <span><strong class="text-white">Data-driven tours</strong> — 5 shared and private tours; each one generates its own detail page from a data file.</span>
+        <span><strong class="text-white">Escursioni guidate dai dati</strong> — 5 escursioni condivise e private; ognuna genera la sua pagina di dettaglio da un file di dati.</span>
       </li>
       <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
         <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-        <span><strong class="text-white">Live sea forecast</strong> — wave height, wind and gusts from Open-Meteo, classified as perfect, good or not advised for a RIB.</span>
+        <span><strong class="text-white">Previsioni del mare in tempo reale</strong> — onda, vento e raffiche da Open-Meteo, classificati come perfetto, buono o sconsigliato per il gommone.</span>
       </li>
       <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
         <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-        <span><strong class="text-white">WhatsApp-first booking</strong> — sticky price bar on mobile with WhatsApp and call buttons on every tour.</span>
+        <span><strong class="text-white">Prenotazione via WhatsApp</strong> — barra del prezzo fissa da mobile con pulsanti WhatsApp e chiamata su ogni escursione.</span>
       </li>
       <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
         <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-        <span><strong class="text-white">SEO</strong> — prerendered HTML, hreflang, canonical URLs, sitemap and FAQPage / TouristTrip structured data.</span>
+        <span><strong class="text-white">SEO</strong> — HTML prerenderizzato, hreflang, URL canonici, sitemap e dati strutturati FAQPage / TouristTrip.</span>
       </li>
       <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
         <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-        <span><strong class="text-white">Privacy-friendly</strong> — Google Maps loads only on click; contact form via mailto or an optional Formspree endpoint.</span>
+        <span><strong class="text-white">Attento alla privacy</strong> — Google Maps si carica solo al clic; modulo contatti via mailto o con un endpoint Formspree opzionale.</span>
       </li>
     </ul>
   </section>
 
   <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
     <div class="divider mb-8">
-      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Challenges &amp; Learnings</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Sfide e lezioni</h2>
     </div>
     <div class="space-y-4 max-w-3xl">
       <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <p class="text-white font-semibold mb-1">SEO for a React app</p>
-        <p class="text-sm text-white/80"><strong>Solved:</strong> prerendered every route at build time instead of adding a Node server. <strong>Learned:</strong> you can have React and a fully static, crawlable site at the same time.</p>
+        <p class="text-white font-semibold mb-1">SEO per un'app React</p>
+        <p class="text-sm text-white/80"><strong>Soluzione:</strong> prerendering di ogni pagina in fase di build invece di aggiungere un server Node. <strong>Lezione:</strong> si possono avere React e un sito completamente statico e indicizzabile insieme.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <p class="text-white font-semibold mb-1">Seven languages without drift</p>
-        <p class="text-sm text-white/80"><strong>Solved:</strong> typed the dictionaries against the Italian one, so TypeScript flags any missing key. <strong>Learned:</strong> types are a great tool for content, not just for code.</p>
+        <p class="text-white font-semibold mb-1">Sette lingue sempre allineate</p>
+        <p class="text-sm text-white/80"><strong>Soluzione:</strong> dizionari tipizzati su quello italiano, così TypeScript segnala ogni chiave mancante. <strong>Lezione:</strong> i tipi sono uno strumento ottimo anche per i contenuti, non solo per il codice.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <p class="text-white font-semibold mb-1">A site the owner can maintain</p>
-        <p class="text-sm text-white/80"><strong>Solved:</strong> split data, texts and components, and wrote the README for a non-developer: where to change a price, a photo or a phone number. <strong>Learned:</strong> documentation is part of the product when the client is the one editing it.</p>
+        <p class="text-white font-semibold mb-1">Un sito che il titolare può gestire</p>
+        <p class="text-sm text-white/80"><strong>Soluzione:</strong> dati, testi e componenti separati, e un README scritto per chi non è sviluppatore: dove cambiare un prezzo, una foto o un numero di telefono. <strong>Lezione:</strong> quando è il cliente a modificare il sito, la documentazione fa parte del prodotto.</p>
       </div>
     </div>
   </section>
 
   <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
     <div class="divider mb-8">
-      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">What's Next</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Prossimi passi</h2>
     </div>
     <ul class="grid sm:grid-cols-2 gap-3 max-w-3xl text-sm text-white/85">
-      <li class="bg-white/5 border border-white/10 rounded-2xl p-4">Go live on the production domain.</li>
-      <li class="bg-white/5 border border-white/10 rounded-2xl p-4">Online availability and booking requests.</li>
+      <li class="bg-white/5 border border-white/10 rounded-2xl p-4">Pubblicazione sul dominio di produzione.</li>
+      <li class="bg-white/5 border border-white/10 rounded-2xl p-4">Disponibilità e richieste di prenotazione online.</li>
     </ul>
   </section>
 
   <!-- ════════════ FOOTER CTA ════════════ -->
   <section class="max-w-4xl mx-auto px-6 py-16 text-center" data-reveal>
-    <p class="font-display text-2xl md:text-3xl text-white mb-6">Want to see the code?</p>
+    <p class="font-display text-2xl md:text-3xl text-white mb-6">Vuoi vedere il codice?</p>
     <div class="flex gap-3 flex-wrap justify-center">
       <a href="https://github.com/Claudio-Santoro/egadicharter" target="_blank" rel="noopener noreferrer"
-         class="btn-ghost text-sm font-medium px-6 py-3 rounded-full">View on GitHub</a>
-      <a href="../index.html#contact" class="btn-ghost text-sm font-medium px-6 py-3 rounded-full">Get in touch</a>
+         class="btn-ghost text-sm font-medium px-6 py-3 rounded-full">Vedi su GitHub</a>
+      <a href="../index.html#contact" class="btn-ghost text-sm font-medium px-6 py-3 rounded-full">Contattami</a>
     </div>
   </section>
 
   <footer class="text-center py-8 text-xs border-t border-white/10 text-white/60">
-    © 2026 Claudio Santoro — <a href="../index.html" class="underline hover:text-white">Back to portfolio</a>
+    © 2026 Claudio Santoro — <a href="../index.html" class="underline hover:text-white">Torna al portfolio</a>
   </footer>
 
   <!-- Reveal-on-scroll (native IntersectionObserver, no libraries) -->

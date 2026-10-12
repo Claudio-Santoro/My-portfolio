@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -10,10 +10,14 @@
   </script>
 
   <!-- SEO Base -->
-<meta name="description" content="Claudio Santoro — Full-Stack Developer specializzato in TypeScript, Java e PostgreSQL. Portfolio progetti web e contatti.">
-<meta name="keywords" content="Claudio Santoro, Full Stack Developer, TypeScript, Java, PostgreSQL, Web Developer Sicily, portfolio sviluppatore">
+<meta name="description" content="Claudio Santoro — Full-Stack Developer da Trapani: TypeScript, Nest.js, React e PostgreSQL. Progetti, competenze e contatti.">
+<meta name="keywords" content="Claudio Santoro, Full Stack Developer, sviluppatore web Trapani, TypeScript, Nest.js, React, PostgreSQL, portfolio sviluppatore">
 <meta name="author" content="Claudio Santoro">
 <meta name="robots" content="index, follow">
+<link rel="canonical" href="https://claudio-santoro.github.io/My-portfolio/">
+<link rel="alternate" hreflang="it" href="https://claudio-santoro.github.io/My-portfolio/">
+<link rel="alternate" hreflang="en" href="https://claudio-santoro.github.io/My-portfolio/en/">
+<link rel="alternate" hreflang="x-default" href="https://claudio-santoro.github.io/My-portfolio/">
 
 <!-- Open Graph (per i link condivisi su WhatsApp, LinkedIn ecc.) -->
 <meta property="og:title" content="Claudio Santoro — Full-Stack Developer">
@@ -77,15 +81,18 @@
 
         <!-- Desktop nav -->
         <ul class="hidden md:flex gap-8 text-sm font-medium">
-          <li><a href="#about"    class="nav-link">About</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#skills"   class="nav-link">Skills</a></li>
-          <li><a href="#journey"  class="nav-link">Journey</a></li>
-          <li><a href="#contact"  class="nav-link">Contact</a></li>
+          <li><a href="#about"    class="nav-link">Chi sono</a></li>
+          <li><a href="#projects" class="nav-link">Progetti</a></li>
+          <li><a href="#skills"   class="nav-link">Competenze</a></li>
+          <li><a href="#journey"  class="nav-link">Percorso</a></li>
+          <li><a href="#contact"  class="nav-link">Contatti</a></li>
         </ul>
 
+        <!-- Language switch -->
+        <a href="en/index.html" class="nav-link text-sm font-medium" hreflang="en" lang="en" aria-label="English version">EN</a>
+
         <!-- Theme toggle -->
-        <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle light/dark theme">
+        <button onclick="toggleTheme()" class="theme-toggle" aria-label="Cambia tema chiaro/scuro">
           <svg class="sun w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="4"/>
             <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
@@ -96,7 +103,7 @@
         </button>
 
         <!-- Hamburger (mobile) -->
-        <button id="hamburger" class="md:hidden flex flex-col justify-center gap-1.5 p-2 w-10 h-10" aria-label="Toggle menu">
+        <button id="hamburger" class="md:hidden flex flex-col justify-center gap-1.5 p-2 w-10 h-10" aria-label="Apri o chiudi il menu">
           <span id="bar1" class="block w-6 h-0.5 bg-tropical dark:bg-white origin-center transition-all duration-300"></span>
           <span id="bar2" class="block w-6 h-0.5 bg-tropical dark:bg-white transition-all duration-300"></span>
           <span id="bar3" class="block w-6 h-0.5 bg-tropical dark:bg-white origin-center transition-all duration-300"></span>
@@ -107,11 +114,12 @@
     <!-- Mobile dropdown -->
     <div id="nav-menu" class="md:hidden px-6">
       <ul class="flex flex-col gap-4 text-sm font-medium py-4 border-t border-white/10">
-        <li><a href="#about"    class="nav-link" onclick="closeMenu()">About</a></li>
-        <li><a href="#projects" class="nav-link" onclick="closeMenu()">Projects</a></li>
-        <li><a href="#skills"   class="nav-link" onclick="closeMenu()">Skills</a></li>
-        <li><a href="#journey"  class="nav-link" onclick="closeMenu()">Journey</a></li>
-        <li><a href="#contact"  class="nav-link" onclick="closeMenu()">Contact</a></li>
+        <li><a href="#about"    class="nav-link" onclick="closeMenu()">Chi sono</a></li>
+        <li><a href="#projects" class="nav-link" onclick="closeMenu()">Progetti</a></li>
+        <li><a href="#skills"   class="nav-link" onclick="closeMenu()">Competenze</a></li>
+        <li><a href="#journey"  class="nav-link" onclick="closeMenu()">Percorso</a></li>
+        <li><a href="#contact"  class="nav-link" onclick="closeMenu()">Contatti</a></li>
+        <li><a href="en/index.html" class="nav-link" hreflang="en" lang="en">English</a></li>
       </ul>
     </div>
   </nav>
@@ -128,22 +136,22 @@
 
         <h1 class="fade-up delay-1 font-display leading-none mb-6 text-white"
             style="font-size: clamp(2.4rem, 7vw, 4.8rem);">
-          Hello,<br/>
-          I'm <em class="not-italic name-accent">Claudio Santoro</em>.
+          Ciao,<br/>
+          sono <em class="not-italic name-accent">Claudio Santoro</em>.
         </h1>
 
         <p class="fade-up delay-2 text-base md:text-lg leading-relaxed mb-10 max-w-lg mx-auto md:mx-0 text-white/90">
-          I'm a <strong class="text-white font-semibold">Full-Stack Developer</strong> passionate about
-          building clean, fast, and user-focused digital experiences. 
+          Sono un <strong class="text-white font-semibold">Full-Stack Developer</strong> appassionato di
+          esperienze digitali pulite, veloci e pensate per chi le usa.
         </p>
 
         <!-- CTA buttons -->
         <div class="fade-up delay-3 flex gap-3 flex-wrap justify-center md:justify-start">
           <a href="#projects" class="btn-ghost text-sm font-medium px-5 py-2.5 rounded-full">
-            View Projects
+            Vedi i progetti
           </a>
           <a href="#contact" class="btn-ghost text-sm font-medium px-5 py-2.5 rounded-full">
-            Get in Touch
+            Contattami
           </a>
         </div>
       </div>
@@ -172,15 +180,15 @@
   <section id="projects" class="max-w-5xl mx-auto px-6 py-20">
 
     <div class="divider mb-12">
-      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Featured Projects</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Progetti in evidenza</h2>
     </div>
 
     <article class="card-hover bg-white rounded-3xl overflow-hidden shadow-md flex flex-col md:flex-row">
 
       <!-- Image -->
       <a href="https://hanging-around.com" target="_blank" rel="noopener noreferrer" class="md:w-2/5 h-56 md:h-auto shrink-0 overflow-hidden group bg-tropical flex items-center justify-center p-6"
-         aria-label="Visit the Hanging Around website (opens in a new tab)">
-        <img src="assets/logonuovo.png" class="max-w-full max-h-full object-contain transition duration-500 group-hover:scale-105" alt="Hanging Around logo"/>
+         aria-label="Visita il sito di Hanging Around (si apre in una nuova scheda)">
+        <img src="assets/logonuovo.png" class="max-w-full max-h-full object-contain transition duration-500 group-hover:scale-105" alt="Logo di Hanging Around"/>
       </a>
 
       <!-- Details -->
@@ -190,11 +198,11 @@
             <h3 class="font-display text-2xl md:text-3xl mt-1 mb-3 text-tropical hover:opacity-70 transition">HANGING AROUND</h3>
           </a>
           <p class="text-sm leading-relaxed mb-6" style="color:#5a5a6a;">
-            Hanging Around is a web and mobile app designed to create a digital place where users can share
-            their passions, hobbies and join activities around them. Focused on the Sicilian territory,
-            this initiative connects people and builds wider communities in a land characterised by strong
-            social closure and low Bridging Social Capital. Live at hanging-around.com, deployed on Render
-            behind Cloudflare.
+            Hanging Around è un'app web e mobile che crea uno spazio digitale dove condividere passioni
+            e hobby e partecipare alle attività intorno a te. Pensata per il territorio siciliano, mette in
+            contatto le persone e costruisce comunità più ampie in una terra segnata da una forte chiusura
+            sociale e da un basso capitale sociale "ponte". Online su hanging-around.com, con deploy su Render
+            dietro Cloudflare.
           </p>
           <div class="flex gap-2 flex-wrap mb-6">
             <span class="badge text-xs px-3 py-1 rounded-full">Nest.js</span>
@@ -213,7 +221,7 @@
           <a href="progetti/hanging-around.html"
              class="flex items-center gap-2 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:opacity-90 transition"
              style="background-color:#36213E;color:#fff;">
-            Read the case study
+            Leggi il case study
             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -223,7 +231,7 @@
             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/>
             </svg>
-            Live site
+            Sito live
           </a>
           <a href="https://github.com/sebastian0x7b/HangingAround" target="_blank" rel="noopener noreferrer"
              class="btn-outline flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-full">
@@ -240,8 +248,8 @@
 
       <!-- Image -->
       <a href="progetti/egadicharter.html" class="md:w-2/5 h-56 md:h-auto shrink-0 overflow-hidden group flex items-center justify-center p-10"
-         style="background-color:#0f3d56;" aria-label="Open Bellavia Egadi Charter case study">
-        <img src="assets/egadicharter/logo.svg" class="max-w-full max-h-full object-contain transition duration-500 group-hover:scale-105" alt="Bellavia Egadi Charter logo"/>
+         style="background-color:#0f3d56;" aria-label="Apri il case study di Bellavia Egadi Charter">
+        <img src="assets/egadicharter/logo.svg" class="max-w-full max-h-full object-contain transition duration-500 group-hover:scale-105" alt="Logo di Bellavia Egadi Charter"/>
       </a>
 
       <!-- Details -->
@@ -251,9 +259,9 @@
             <h3 class="font-display text-2xl md:text-3xl mt-1 mb-3 text-tropical hover:opacity-70 transition">BELLAVIA EGADI CHARTER</h3>
           </a>
           <p class="text-sm leading-relaxed mb-6" style="color:#5a5a6a;">
-            A showcase website for RIB boat tours from Trapani to the Egadi Islands. Seven languages,
-            prerendered static pages for SEO, a live sea forecast from Open-Meteo and WhatsApp-first
-            booking — shipped as a Docker image with Nginx and Caddy.
+            Sito vetrina per escursioni in gommone da Trapani alle Isole Egadi. Sette lingue, pagine
+            statiche prerenderizzate per la SEO, previsioni del mare in tempo reale da Open-Meteo e
+            prenotazioni via WhatsApp — distribuito come immagine Docker con Nginx e Caddy.
           </p>
           <div class="flex gap-2 flex-wrap mb-6">
             <span class="badge text-xs px-3 py-1 rounded-full">React</span>
@@ -269,7 +277,7 @@
           <a href="progetti/egadicharter.html"
              class="flex items-center gap-2 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:opacity-90 transition"
              style="background-color:#36213E;color:#fff;">
-            Read the case study
+            Leggi il case study
             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
@@ -294,13 +302,13 @@
   <section id="skills" class="max-w-5xl mx-auto px-6 py-20">
 
     <div class="divider mb-12">
-      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Skills &amp; Tools</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Competenze e strumenti</h2>
     </div>
 
     <!-- Legend -->
     <div class="flex items-center gap-6 mb-6 text-xs text-white/70">
-      <span class="flex items-center gap-1.5"><span class="text-white text-sm leading-none">&#9679;</span> Used in real projects</span>
-      <span class="flex items-center gap-1.5"><span class="text-white/70 text-sm leading-none">&#9675;</span> Studied / exercises</span>
+      <span class="flex items-center gap-1.5"><span class="text-white text-sm leading-none">&#9679;</span> Usato in progetti reali</span>
+      <span class="flex items-center gap-1.5"><span class="text-white/70 text-sm leading-none">&#9675;</span> Studiato / esercizi</span>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -394,7 +402,7 @@
               <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2-2 2.6-2.6z"/>
             </svg>
           </span>
-          <h3 class="font-display text-xl text-tropical">Tools &amp; DevOps</h3>
+          <h3 class="font-display text-xl text-tropical">Strumenti e DevOps</h3>
         </div>
         <div class="flex flex-wrap gap-2">
           <span class="badge text-sm px-4 py-2 rounded-full">Git <sup class="text-grey">&#9679;</sup></span>
@@ -425,10 +433,10 @@
   <section id="journey" class="max-w-5xl mx-auto px-6 py-20">
 
     <div class="divider mb-4">
-      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">My Journey</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Il mio percorso</h2>
     </div>
     <p class="text-center text-sm text-white/60 mb-12 max-w-xl mx-auto">
-      How I grew into a full-stack developer — the tech I picked up and what I built with it.
+      Come sono diventato full-stack developer — le tecnologie che ho imparato e cosa ci ho costruito.
     </p>
 
     <ol class="relative border-s border-white/20 ms-3 max-w-2xl mx-auto">
@@ -436,9 +444,9 @@
       <!-- Edit the years to match your real timeline -->
       <li class="mb-12 ms-8" data-reveal>
         <span class="absolute w-3.5 h-3.5 rounded-full -start-[7px] mt-1.5 bg-tropical dark:bg-white ring-4 ring-[#f0eef4] dark:ring-black"></span>
-        <p class="text-xs uppercase tracking-widest text-grey mb-1">Feb 2025 · Foundations</p>
-        <h3 class="font-display text-xl text-white mb-2">First lines of code</h3>
-        <p class="text-sm text-white/80 mb-3">Learned how the web works from the ground up — structure, style and behaviour — and shipped my first static sites.</p>
+        <p class="text-xs uppercase tracking-widest text-grey mb-1">Feb 2025 · Le basi</p>
+        <h3 class="font-display text-xl text-white mb-2">Le prime righe di codice</h3>
+        <p class="text-sm text-white/80 mb-3">Ho imparato come funziona il web dalle fondamenta — struttura, stile e comportamento — e ho pubblicato i miei primi siti statici.</p>
         <div class="flex gap-2 flex-wrap">
           <span class="text-xs px-3 py-1 rounded-full border border-white/20 text-white/80">HTML</span>
           <span class="text-xs px-3 py-1 rounded-full border border-white/20 text-white/80">CSS</span>
@@ -448,9 +456,9 @@
 
       <li class="mb-12 ms-8" data-reveal>
         <span class="absolute w-3.5 h-3.5 rounded-full -start-[7px] mt-1.5 bg-tropical dark:bg-white ring-4 ring-[#f0eef4] dark:ring-black"></span>
-        <p class="text-xs uppercase tracking-widest text-grey mb-1">Nov 2025 · Started Steve Jobs Academy</p>
-        <h3 class="font-display text-xl text-white mb-2">Backend, databases &amp; type safety</h3>
-        <p class="text-sm text-white/80 mb-3">Moved to the server side: built REST APIs on Node.js, modelled relational data in PostgreSQL, and adopted TypeScript for safer code. Learned Git for real collaboration.</p>
+        <p class="text-xs uppercase tracking-widest text-grey mb-1">Nov 2025 · Inizio alla Steve Jobs Academy</p>
+        <h3 class="font-display text-xl text-white mb-2">Backend, database e type safety</h3>
+        <p class="text-sm text-white/80 mb-3">Sono passato al lato server: API REST su Node.js, dati relazionali modellati in PostgreSQL e TypeScript per un codice più sicuro. Ho imparato Git per collaborare davvero in team.</p>
         <div class="flex gap-2 flex-wrap">
           <span class="text-xs px-3 py-1 rounded-full border border-white/20 text-white/80">Node.js</span>
           <span class="text-xs px-3 py-1 rounded-full border border-white/20 text-white/80">TypeScript</span>
@@ -462,9 +470,9 @@
 
       <li class="mb-12 ms-8" data-reveal>
         <span class="absolute w-3.5 h-3.5 rounded-full -start-[7px] mt-1.5 bg-tropical dark:bg-white ring-4 ring-[#f0eef4] dark:ring-black"></span>
-        <p class="text-xs uppercase tracking-widest text-grey mb-1">May 2026 · Hanging Around</p>
-        <h3 class="font-display text-xl text-white mb-2">My first real product</h3>
-        <p class="text-sm text-white/80 mb-3">Building a social events platform end-to-end: a web app (PWA) and a React Native client on top of a Nest.js + Prisma backend, shipped to production on Render behind Cloudflare. This is where the pieces came together.</p>
+        <p class="text-xs uppercase tracking-widest text-grey mb-1">Mag 2026 · Hanging Around</p>
+        <h3 class="font-display text-xl text-white mb-2">Il mio primo prodotto reale</h3>
+        <p class="text-sm text-white/80 mb-3">Una piattaforma social di eventi costruita da cima a fondo: una web app (PWA) e un client React Native su un backend Nest.js + Prisma, in produzione su Render dietro Cloudflare. Qui tutti i pezzi sono andati al loro posto.</p>
         <div class="flex gap-2 flex-wrap">
           <span class="text-xs px-3 py-1 rounded-full border border-white/20 text-white/80">Nest.js</span>
           <span class="text-xs px-3 py-1 rounded-full border border-white/20 text-white/80">TypeScript</span>
@@ -475,16 +483,16 @@
           <span class="text-xs px-3 py-1 rounded-full border border-white/20 text-white/80">Render</span>
         </div>
         <a href="progetti/hanging-around.html" class="inline-flex items-center gap-1 text-sm font-medium mt-3 text-[#7c3aed] dark:text-[#c4b5fd] hover:opacity-80 transition">
-          Read the case study
+          Leggi il case study
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </li>
 
       <li class="mb-12 ms-8" data-reveal>
         <span class="absolute w-3.5 h-3.5 rounded-full -start-[7px] mt-1.5 bg-tropical dark:bg-white ring-4 ring-[#f0eef4] dark:ring-black"></span>
-        <p class="text-xs uppercase tracking-widest text-grey mb-1">Sep 2026 · Bellavia Egadi Charter</p>
-        <h3 class="font-display text-xl text-white mb-2">A site for a real client</h3>
-        <p class="text-sm text-white/80 mb-3">Built a multilingual tourism site in React and TypeScript for a local charter business: static prerendering for SEO, seven languages, containerised deploy with Nginx and Caddy.</p>
+        <p class="text-xs uppercase tracking-widest text-grey mb-1">Set 2026 · Bellavia Egadi Charter</p>
+        <h3 class="font-display text-xl text-white mb-2">Un sito per un cliente reale</h3>
+        <p class="text-sm text-white/80 mb-3">Un sito turistico multilingue in React e TypeScript per un'attività locale di charter: prerendering statico per la SEO, sette lingue, deploy containerizzato con Nginx e Caddy.</p>
         <div class="flex gap-2 flex-wrap">
           <span class="text-xs px-3 py-1 rounded-full border border-white/20 text-white/80">React</span>
           <span class="text-xs px-3 py-1 rounded-full border border-white/20 text-white/80">TypeScript</span>
@@ -492,16 +500,16 @@
           <span class="text-xs px-3 py-1 rounded-full border border-white/20 text-white/80">Docker</span>
         </div>
         <a href="progetti/egadicharter.html" class="inline-flex items-center gap-1 text-sm font-medium mt-3 text-[#7c3aed] dark:text-[#c4b5fd] hover:opacity-80 transition">
-          Read the case study
+          Leggi il case study
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </li>
 
       <li class="ms-8" data-reveal>
         <span class="absolute w-3.5 h-3.5 rounded-full -start-[7px] mt-1.5 bg-tropical dark:bg-white ring-4 ring-[#f0eef4] dark:ring-black"></span>
-        <p class="text-xs uppercase tracking-widest text-grey mb-1">Present · Currently exploring</p>
-        <h3 class="font-display text-xl text-white mb-2">Broadening the toolbox</h3>
-        <p class="text-sm text-white/80 mb-3">Expanding across the ecosystem — modern React with Next.js, component-driven apps with Angular, and Python — through exercises and small projects.</p>
+        <p class="text-xs uppercase tracking-widest text-grey mb-1">Oggi · Cosa sto esplorando</p>
+        <h3 class="font-display text-xl text-white mb-2">Allargo la cassetta degli attrezzi</h3>
+        <p class="text-sm text-white/80 mb-3">Mi sto allargando nell'ecosistema — React moderno con Next.js, app a componenti con Angular, e Python — con esercizi e piccoli progetti.</p>
         <div class="flex gap-2 flex-wrap">
           <span class="text-xs px-3 py-1 rounded-full border border-white/20 text-white/80">React</span>
           <span class="text-xs px-3 py-1 rounded-full border border-white/20 text-white/80">Next.js</span>
@@ -521,34 +529,35 @@
   <section id="contact" class="max-w-5xl mx-auto px-6 py-20">
 
     <div class="divider mb-12">
-      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Get In Touch</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Contattami</h2>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
 
       <!-- Form -->
       <div class="bg-white rounded-2xl p-6 md:p-8 shadow-md">
-        <p class="font-display text-xl md:text-2xl mb-1 text-tropical">Send me a message.</p>
-        <p class="text-sm mb-6" style="color:#5a5a6a;">I'll get back to you as soon as possible.</p>
+        <p class="font-display text-xl md:text-2xl mb-1 text-tropical">Scrivimi un messaggio.</p>
+        <p class="text-sm mb-6" style="color:#5a5a6a;">Ti risponderò il prima possibile.</p>
 
         <form action="https://formspree.io/f/xaqplvga" method="POST" class="flex flex-col gap-4">
+          <input type="hidden" name="_language" value="it"/>
           <div>
-            <label class="block text-xs font-medium uppercase tracking-wider mb-1 text-grey" for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Your Name" required class="form-input"/>
+            <label class="block text-xs font-medium uppercase tracking-wider mb-1 text-grey" for="name">Nome</label>
+            <input id="name" name="name" type="text" placeholder="Il tuo nome" required class="form-input"/>
           </div>
           <div>
             <label class="block text-xs font-medium uppercase tracking-wider mb-1 text-grey" for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="your@email.com" required class="form-input"/>
+            <input id="email" name="email" type="email" placeholder="tua@email.com" required class="form-input"/>
           </div>
           <div>
-            <label class="block text-xs font-medium uppercase tracking-wider mb-1 text-grey" for="message">Message</label>
-            <textarea id="message" name="message" rows="4" placeholder="Tell me about your project…"
+            <label class="block text-xs font-medium uppercase tracking-wider mb-1 text-grey" for="message">Messaggio</label>
+            <textarea id="message" name="message" rows="4" placeholder="Raccontami del tuo progetto…"
                       required class="form-input resize-none"></textarea>
           </div>
           <button type="submit"
                   class="flex items-center gap-2 self-start text-white text-sm font-medium px-6 py-3 rounded-full hover:opacity-90 transition"
                   style="background-color:#36213E;color:#fff;">
-            Send Message
+            Invia messaggio
             <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9l20-7z"/>
             </svg>
@@ -621,8 +630,8 @@
             </svg>
           </span>
           <div>
-            <p class="text-xs uppercase tracking-widest mb-0.5 text-grey">Location</p>
-            <p class="text-sm font-medium text-tropical">Trapani, Sicily 🇮🇹</p>
+            <p class="text-xs uppercase tracking-widest mb-0.5 text-grey">Dove sono</p>
+            <p class="text-sm font-medium text-tropical">Trapani, Sicilia 🇮🇹</p>
           </div>
         </div>
 
@@ -635,7 +644,7 @@
        FOOTER
   ════════════════════════════════════ -->
   <footer class="text-center py-8 text-xs border-t border-white/10 text-white/60">
-    © 2026 Claudio Santoro — All rights reserved
+    © 2026 Claudio Santoro — Tutti i diritti riservati
   </footer>
 
 

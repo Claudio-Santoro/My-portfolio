@@ -1,17 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://claudio-santoro.github.io/My-portfolio/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://claudio-santoro.github.io/My-portfolio/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claudio-santoro.github.io/My-portfolio/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claudio-santoro.github.io/My-portfolio/"/>
+    <lastmod>2026-10-12</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://claudio-santoro.github.io/My-portfolio/en/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://claudio-santoro.github.io/My-portfolio/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claudio-santoro.github.io/My-portfolio/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claudio-santoro.github.io/My-portfolio/"/>
     <lastmod>2026-10-12</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://claudio-santoro.github.io/My-portfolio/progetti/hanging-around.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://claudio-santoro.github.io/My-portfolio/progetti/hanging-around.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claudio-santoro.github.io/My-portfolio/en/progetti/hanging-around.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claudio-santoro.github.io/My-portfolio/progetti/hanging-around.html"/>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://claudio-santoro.github.io/My-portfolio/en/progetti/hanging-around.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://claudio-santoro.github.io/My-portfolio/progetti/hanging-around.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claudio-santoro.github.io/My-portfolio/en/progetti/hanging-around.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claudio-santoro.github.io/My-portfolio/progetti/hanging-around.html"/>
     <lastmod>2026-10-12</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://claudio-santoro.github.io/My-portfolio/progetti/egadicharter.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://claudio-santoro.github.io/My-portfolio/progetti/egadicharter.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claudio-santoro.github.io/My-portfolio/en/progetti/egadicharter.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claudio-santoro.github.io/My-portfolio/progetti/egadicharter.html"/>
+    <lastmod>2026-10-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://claudio-santoro.github.io/My-portfolio/en/progetti/egadicharter.html</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://claudio-santoro.github.io/My-portfolio/progetti/egadicharter.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://claudio-santoro.github.io/My-portfolio/en/progetti/egadicharter.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://claudio-santoro.github.io/My-portfolio/progetti/egadicharter.html"/>
     <lastmod>2026-10-12</lastmod>
     <priority>0.8</priority>
   </url>

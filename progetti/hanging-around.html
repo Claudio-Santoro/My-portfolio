@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -10,13 +10,17 @@
   </script>
 
   <!-- SEO -->
-  <meta name="description" content="Hanging Around — a social events platform connecting people around shared hobbies in Sicily. Web app (PWA) and React Native client on a Nest.js + Prisma + PostgreSQL backend, live on Render behind Cloudflare. Case study by Claudio Santoro.">
+  <meta name="description" content="Hanging Around — piattaforma social di eventi che unisce le persone attorno a passioni comuni in Sicilia. Web app (PWA) e client React Native su backend Nest.js + Prisma + PostgreSQL, online su Render dietro Cloudflare. Case study di Claudio Santoro.">
   <meta name="author" content="Claudio Santoro">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://claudio-santoro.github.io/My-portfolio/progetti/hanging-around.html">
+  <link rel="alternate" hreflang="it" href="https://claudio-santoro.github.io/My-portfolio/progetti/hanging-around.html">
+  <link rel="alternate" hreflang="en" href="https://claudio-santoro.github.io/My-portfolio/en/progetti/hanging-around.html">
+  <link rel="alternate" hreflang="x-default" href="https://claudio-santoro.github.io/My-portfolio/progetti/hanging-around.html">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Hanging Around — Nest.js + PWA case study">
-  <meta property="og:description" content="How we built a social events platform for Sicily: PWA web app and React Native client, Nest.js + Prisma backend on PostgreSQL, verified QR check-in, deployed on Render and Cloudflare.">
+  <meta property="og:title" content="Hanging Around — case study Nest.js + PWA">
+  <meta property="og:description" content="Come abbiamo costruito una piattaforma social di eventi per la Sicilia: web app PWA e client React Native, backend Nest.js + Prisma su PostgreSQL, check-in verificato con QR, deploy su Render e Cloudflare.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://claudio-santoro.github.io/My-portfolio/progetti/hanging-around.html">
   <meta property="og:image" content="https://claudio-santoro.github.io/My-portfolio/assets/logonuovo.png">
@@ -107,7 +111,8 @@
       </a>
       <div class="flex items-center gap-4">
         <span class="font-display text-lg name-accent">Claudio Santoro</span>
-        <button onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle light/dark theme">
+        <a href="../en/progetti/hanging-around.html" class="nav-link text-sm font-medium" hreflang="en" lang="en" aria-label="English version">EN</a>
+        <button onclick="toggleTheme()" class="theme-toggle" aria-label="Cambia tema chiaro/scuro">
           <svg class="sun w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="4"/>
             <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
@@ -123,16 +128,16 @@
   <!-- ════════════ HERO ════════════ -->
   <header class="max-w-4xl mx-auto px-6 pt-32 pb-16">
     <p class="fade-up text-sm tracking-widest uppercase font-medium mb-4 text-white/70">
-      Case Study · Social Events Platform · Web &amp; Mobile
+      Case Study · Piattaforma social di eventi · Web e mobile
     </p>
     <h1 class="fade-up delay-1 font-display leading-none mb-6 text-white"
         style="font-size: clamp(2.2rem, 6vw, 4rem);">
       <span class="name-accent">Hanging&nbsp;Around</span>
     </h1>
     <p class="fade-up delay-2 text-base md:text-lg leading-relaxed mb-8 max-w-2xl text-white/90">
-      A social app that turns shared passions into real-world meetups. People discover hobbies
-      and activities happening around them and join others nearby — designed for the Sicilian
-      territory to fight social isolation and grow local communities. Live in production at
+      Un'app social che trasforma le passioni condivise in incontri reali. Le persone scoprono hobby
+      e attività intorno a loro e si uniscono ad altri vicino a casa — pensata per il territorio
+      siciliano, per combattere l'isolamento sociale e far crescere le comunità locali. In produzione su
       <a href="https://hanging-around.com" target="_blank" rel="noopener noreferrer" class="underline hover:opacity-80">hanging-around.com</a>.
     </p>
 
@@ -156,49 +161,49 @@
         <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
         </svg>
-        View on GitHub
+        Vedi su GitHub
       </a>
       <a href="https://hanging-around.com" target="_blank" rel="noopener noreferrer"
          class="btn-ghost flex items-center gap-2 text-sm font-medium px-5 py-2.5 rounded-full">
         <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/>
         </svg>
-        Visit the live site
+        Visita il sito live
       </a>
     </div>
 
     <!-- Screenshot gallery -->
     <div class="fade-up delay-4 gallery">
-      <img src="../assets/hanging-around/landing.webp" alt="Hanging Around — landing page on mobile" class="gallery-item" loading="lazy"/>
-      <img src="../assets/hanging-around/homepage.webp" alt="Hanging Around — home after login on mobile" class="gallery-item" loading="lazy"/>
-      <img src="../assets/hanging-around/esplora.webp" alt="Hanging Around — explore events with search, filters and map on mobile" class="gallery-item" loading="lazy"/>
-      <img src="../assets/hanging-around/evento.webp" alt="Hanging Around — event detail page on mobile" class="gallery-item" loading="lazy"/>
-      <img src="../assets/hanging-around/crea.webp" alt="Hanging Around — create-event editor on mobile" class="gallery-item" loading="lazy"/>
-      <img src="../assets/hanging-around/eventi.webp" alt="Hanging Around — your events dashboard on mobile" class="gallery-item" loading="lazy"/>
-      <img src="../assets/hanging-around/profilo.webp" alt="Hanging Around — edit profile on mobile" class="gallery-item" loading="lazy"/>
-      <img src="../assets/hanging-around/notifiche.webp" alt="Hanging Around — notifications and push settings on mobile" class="gallery-item" loading="lazy"/>
-      <img src="../assets/hanging-around/badge.webp" alt="Hanging Around — badge catalogue on mobile" class="gallery-item" loading="lazy"/>
-      <img src="../assets/hanging-around/presenze.webp" alt="Hanging Around — organiser attendance and live QR on mobile" class="gallery-item" loading="lazy"/>
+      <img src="../assets/hanging-around/landing.webp" alt="Hanging Around — landing page da mobile" class="gallery-item" loading="lazy"/>
+      <img src="../assets/hanging-around/homepage.webp" alt="Hanging Around — home dopo il login da mobile" class="gallery-item" loading="lazy"/>
+      <img src="../assets/hanging-around/esplora.webp" alt="Hanging Around — esplora eventi con ricerca, filtri e mappa da mobile" class="gallery-item" loading="lazy"/>
+      <img src="../assets/hanging-around/evento.webp" alt="Hanging Around — dettaglio evento da mobile" class="gallery-item" loading="lazy"/>
+      <img src="../assets/hanging-around/crea.webp" alt="Hanging Around — editor di creazione evento da mobile" class="gallery-item" loading="lazy"/>
+      <img src="../assets/hanging-around/eventi.webp" alt="Hanging Around — i tuoi eventi da mobile" class="gallery-item" loading="lazy"/>
+      <img src="../assets/hanging-around/profilo.webp" alt="Hanging Around — modifica profilo da mobile" class="gallery-item" loading="lazy"/>
+      <img src="../assets/hanging-around/notifiche.webp" alt="Hanging Around — notifiche e impostazioni push da mobile" class="gallery-item" loading="lazy"/>
+      <img src="../assets/hanging-around/badge.webp" alt="Hanging Around — catalogo badge da mobile" class="gallery-item" loading="lazy"/>
+      <img src="../assets/hanging-around/presenze.webp" alt="Hanging Around — gestione presenze e QR live da mobile" class="gallery-item" loading="lazy"/>
     </div>
-    <p class="text-center text-xs mt-2 text-white/50">Mobile view of hanging-around.com — landing and private areas</p>
+    <p class="text-center text-xs mt-2 text-white/50">Vista mobile di hanging-around.com — landing e aree private</p>
   </header>
 
   <!-- ════════════ THE PROBLEM ════════════ -->
   <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
     <div class="divider mb-8">
-      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">The Problem</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Il problema</h2>
     </div>
     <div class="max-w-2xl space-y-4 text-white/85 leading-relaxed">
       <p>
-        Sicily is a territory marked by strong social closure and low <em class="not-italic text-white">bridging
-        social capital</em> — people stay inside tight, familiar circles and rarely connect across groups.
-        For anyone new to a place, or simply looking to pursue a hobby with others, there was no simple way
-        to find who is doing <strong class="text-white font-semibold">what</strong>, <strong class="text-white font-semibold">where</strong>,
-        and <strong class="text-white font-semibold">when</strong>.
+        La Sicilia è un territorio segnato da una forte chiusura sociale e da un basso <em class="not-italic text-white">capitale
+        sociale "ponte"</em> — le persone restano in cerchie strette e familiari e raramente si aprono ad altri gruppi.
+        Per chi è nuovo in una città, o vuole semplicemente coltivare un hobby in compagnia, non c'era un modo semplice
+        per scoprire chi fa <strong class="text-white font-semibold">cosa</strong>, <strong class="text-white font-semibold">dove</strong>
+        e <strong class="text-white font-semibold">quando</strong>.
       </p>
       <p>
-        Existing social networks optimise for online engagement, not for actually meeting up.
-        The need was a tool that starts from a shared interest and ends with people in the same room.
+        I social network esistenti ottimizzano l'interazione online, non l'incontro dal vivo.
+        Serviva uno strumento che parte da un interesse comune e finisce con le persone nella stessa stanza.
       </p>
     </div>
   </section>
@@ -206,27 +211,27 @@
   <!-- ════════════ THE IDEA ════════════ -->
   <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
     <div class="divider mb-8">
-      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">The Idea</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">L'idea</h2>
     </div>
     <div class="max-w-2xl space-y-4 text-white/85 leading-relaxed">
       <p>
-        Hanging Around was born from a simple question: <em class="not-italic text-white">"what if joining
-        an activity near you was as easy as liking a post?"</em> Instead of feeds, the app is organised
-        around <strong class="text-white font-semibold">interests</strong> and <strong class="text-white font-semibold">local
-        activities</strong> you can actually attend.
+        Hanging Around nasce da una domanda semplice: <em class="not-italic text-white">"e se partecipare a
+        un'attività vicino a te fosse facile come mettere un like?"</em> Invece dei feed, l'app è organizzata
+        attorno a <strong class="text-white font-semibold">interessi</strong> e <strong class="text-white font-semibold">attività
+        locali</strong> a cui puoi davvero partecipare.
       </p>
       <div class="grid sm:grid-cols-3 gap-4 pt-2">
         <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
-          <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Goal</p>
-          <p class="text-sm">Turn shared passions into real meetups.</p>
+          <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Obiettivo</p>
+          <p class="text-sm">Trasformare passioni condivise in incontri reali.</p>
         </div>
         <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
           <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Target</p>
-          <p class="text-sm">Young people & newcomers in Sicilian towns.</p>
+          <p class="text-sm">Giovani e nuovi arrivati nelle città siciliane.</p>
         </div>
         <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
-          <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Outcome</p>
-          <p class="text-sm">Stronger, wider local communities.</p>
+          <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Risultato</p>
+          <p class="text-sm">Comunità locali più forti e più aperte.</p>
         </div>
       </div>
     </div>
@@ -235,66 +240,66 @@
   <!-- ════════════ ARCHITECTURE ════════════ -->
   <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
     <div class="divider mb-8">
-      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Architecture</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Architettura</h2>
     </div>
 
     <p class="max-w-2xl text-white/85 leading-relaxed mb-8">
-      Two clients — a <strong class="text-white font-semibold">web app</strong> (HTML, CSS, vanilla JS, Tailwind, installable as a
-      <strong class="text-white font-semibold">PWA</strong>) and a <strong class="text-white font-semibold">React Native / Expo</strong> app —
-      share one <strong class="text-white font-semibold">Nest.js</strong> REST API. Nest also serves the static web app, so the whole
-      product ships as a single service. Data lives in <strong class="text-white font-semibold">PostgreSQL</strong> (Neon) through
-      <strong class="text-white font-semibold">Prisma</strong>; media go to Cloudinary with server-signed uploads, emails through Resend.
+      Due client — una <strong class="text-white font-semibold">web app</strong> (HTML, CSS, JS vanilla, Tailwind, installabile come
+      <strong class="text-white font-semibold">PWA</strong>) e un'app <strong class="text-white font-semibold">React Native / Expo</strong> —
+      condividono un'unica API REST <strong class="text-white font-semibold">Nest.js</strong>. Nest serve anche la web app statica, quindi
+      l'intero prodotto va online come un solo servizio. I dati stanno in <strong class="text-white font-semibold">PostgreSQL</strong> (Neon)
+      tramite <strong class="text-white font-semibold">Prisma</strong>; le immagini vanno su Cloudinary con upload firmati dal server, le email partono con Resend.
     </p>
 
     <!-- Request flow diagram -->
-    <p class="text-xs uppercase tracking-widest text-white/50 mb-3">Request flow — from a tap to the database and back</p>
+    <p class="text-xs uppercase tracking-widest text-white/50 mb-3">Flusso di una richiesta — dal tap al database e ritorno</p>
     <div class="flow mb-4">
       <div class="flow-node">
-        <div class="kind">Clients</div>
+        <div class="kind">Client</div>
         <div class="title">Web PWA · Expo app</div>
-        <div class="desc">User taps "Join". The client sends an HTTPS request with the JWT attached.</div>
+        <div class="desc">L'utente tocca "Partecipa". Il client invia una richiesta HTTPS con il JWT allegato.</div>
       </div>
       <div class="flow-arrow">→</div>
       <div class="flow-node">
         <div class="kind">Edge</div>
         <div class="title">Cloudflare → Render</div>
-        <div class="desc">DNS, TLS and proxy on Cloudflare; the Nest.js service runs on Render.</div>
+        <div class="desc">DNS, TLS e proxy su Cloudflare; il servizio Nest.js gira su Render.</div>
       </div>
       <div class="flow-arrow">→</div>
       <div class="flow-node">
         <div class="kind">Backend</div>
         <div class="title">Controller → Service</div>
-        <div class="desc">Guards check the JWT, DTOs validate input, the service applies capacity, waitlist and ownership rules.</div>
+        <div class="desc">Le guard verificano il JWT, i DTO validano i dati, il service applica le regole su posti, lista d'attesa e proprietà.</div>
       </div>
       <div class="flow-arrow">→</div>
       <div class="flow-node">
-        <div class="kind">Data</div>
+        <div class="kind">Dati</div>
         <div class="title">Prisma → PostgreSQL</div>
-        <div class="desc">Typed queries on a 21-model schema; migrations versioned in the repo.</div>
+        <div class="desc">Query tipizzate su uno schema di 21 modelli; migrazioni versionate nella repo.</div>
       </div>
     </div>
     <p class="text-sm text-white/60 max-w-2xl">
-      The JSON response travels back up the same chain and the client updates the UI. Each layer has one job,
-      which keeps the code testable and easy to reason about.
+      La risposta JSON ripercorre la stessa catena e il client aggiorna l'interfaccia. Ogni livello ha un solo compito,
+      e questo rende il codice testabile e facile da capire.
     </p>
 
     <!-- Layer breakdown -->
     <div class="grid md:grid-cols-2 gap-4 mt-8">
       <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
         <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Web</p>
-        <p class="text-sm text-white/85">HTML, CSS and ES-module JavaScript with Tailwind CSS v4 — service worker, web manifest and push notifications; Leaflet + OpenStreetMap for the event map. E2E tests with Playwright.</p>
+        <p class="text-sm text-white/85">HTML, CSS e JavaScript a moduli ES con Tailwind CSS v4 — service worker, web manifest e notifiche push; Leaflet + OpenStreetMap per la mappa degli eventi. Test E2E con Playwright.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
         <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Mobile</p>
-        <p class="text-sm text-white/85">React Native with Expo and Expo Router — the same API, native QR scanning and location for check-in.</p>
+        <p class="text-sm text-white/85">React Native con Expo ed Expo Router — stessa API, scansione QR e posizione native per il check-in.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
         <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Backend</p>
-        <p class="text-sm text-white/85">Nest.js 11 — modules for auth, users, events, badges, notifications, uploads, reports, newsletter and the AI assistant. JWT + Passport, Helmet, rate limiting, Jest tests.</p>
+        <p class="text-sm text-white/85">Nest.js 11 — moduli per auth, utenti, eventi, badge, notifiche, upload, segnalazioni, newsletter e assistente AI. JWT + Passport, Helmet, rate limiting, test con Jest.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Data &amp; services</p>
-        <p class="text-sm text-white/85">PostgreSQL on Neon via Prisma 7 · Cloudinary for images · Resend for email · Web Push · a Python RAG voice assistant that reads data directly but writes only through the API with the user's JWT.</p>
+        <p class="text-xs uppercase tracking-widest text-white/50 mb-1">Dati e servizi</p>
+        <p class="text-sm text-white/85">PostgreSQL su Neon via Prisma 7 · Cloudinary per le immagini · Resend per le email · Web Push · un assistente vocale RAG in Python che legge i dati direttamente ma scrive solo tramite l'API con il JWT dell'utente.</p>
       </div>
     </div>
   </section>
@@ -302,43 +307,43 @@
   <!-- ════════════ TECHNOLOGIES ════════════ -->
   <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
     <div class="divider mb-8">
-      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Technologies</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Tecnologie</h2>
     </div>
 
     <div class="space-y-4">
       <div class="bg-white rounded-2xl p-6 shadow-md">
         <h3 class="font-display text-xl text-tropical mb-2">Nest.js</h3>
-        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Why:</strong> an opinionated structure (modules, controllers, services, dependency injection) that scales cleanly as features grow.</p>
-        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">How:</strong> Controller → Service layers per domain, DTO validation, JWT guards, throttling and Helmet; it also serves the static web app.</p>
-        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Payoff:</strong> a predictable, testable backend where every responsibility lives in one obvious place.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Perché:</strong> una struttura ben definita (moduli, controller, service, dependency injection) che scala senza disordine man mano che crescono le funzionalità.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Come:</strong> livelli Controller → Service per dominio, validazione con DTO, guard JWT, throttling e Helmet; serve anche la web app statica.</p>
+        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Risultato:</strong> un backend prevedibile e testabile, dove ogni responsabilità ha un posto ovvio.</p>
       </div>
 
       <div class="bg-white rounded-2xl p-6 shadow-md">
         <h3 class="font-display text-xl text-tropical mb-2">Prisma + PostgreSQL</h3>
-        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Why:</strong> the data is relational — users, events, attendances, follows, badges, reviews — and the schema should be the single source of truth.</p>
-        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">How:</strong> 21 models with versioned migrations and generated TypeScript types, hosted on Neon serverless Postgres.</p>
-        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Payoff:</strong> type-safe queries end to end and zero database ops.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Perché:</strong> i dati sono relazionali — utenti, eventi, presenze, follow, badge, recensioni — e lo schema deve essere l'unica fonte di verità.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Come:</strong> 21 modelli con migrazioni versionate e tipi TypeScript generati, su Postgres serverless di Neon.</p>
+        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Risultato:</strong> query tipizzate da cima a fondo e zero gestione del database.</p>
       </div>
 
       <div class="bg-white rounded-2xl p-6 shadow-md">
         <h3 class="font-display text-xl text-tropical mb-2">Web app (PWA) + Tailwind CSS</h3>
-        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Why:</strong> the website is the storefront and must be fast, indexable and installable — no framework build needed.</p>
-        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">How:</strong> vanilla ES modules, Tailwind CSS v4, service worker for offline and push notifications, optimised WebP images, Playwright tests.</p>
-        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Payoff:</strong> one deploy, no client build step, and a mobile experience close to a native app.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Perché:</strong> il sito è la vetrina e deve essere veloce, indicizzabile e installabile — senza bisogno di un framework con build.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Come:</strong> moduli ES vanilla, Tailwind CSS v4, service worker per offline e notifiche push, immagini WebP ottimizzate, test con Playwright.</p>
+        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Risultato:</strong> un solo deploy, nessuna build lato client e un'esperienza da mobile vicina a quella di un'app nativa.</p>
       </div>
 
       <div class="bg-white rounded-2xl p-6 shadow-md">
         <h3 class="font-display text-xl text-tropical mb-2">React Native + Expo</h3>
-        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Why:</strong> one codebase for iOS and Android, with native modules (camera, location) ready to use.</p>
-        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">How:</strong> Expo Router screens on top of a thin API client that attaches the auth token to every request; builds with EAS.</p>
-        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Payoff:</strong> fast iteration and a native feel without maintaining two separate apps.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Perché:</strong> un solo codice per iOS e Android, con moduli nativi (fotocamera, posizione) pronti all'uso.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Come:</strong> schermate con Expo Router sopra un client API leggero che allega il token a ogni richiesta; build con EAS.</p>
+        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Risultato:</strong> iterazioni rapide e resa nativa senza mantenere due app separate.</p>
       </div>
 
       <div class="bg-white rounded-2xl p-6 shadow-md">
         <h3 class="font-display text-xl text-tropical mb-2">Deploy: Render + Cloudflare</h3>
-        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Why:</strong> a managed Node host with HTTPS and a health check, fronted by a CDN and DNS we control.</p>
-        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">How:</strong> the Nest.js service runs on Render; Cloudflare handles DNS and proxying for hanging-around.com, and the Render subdomain permanently redirects (308) to the canonical domain.</p>
-        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Payoff:</strong> a real production URL, one canonical domain for SEO, and no servers to maintain.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Perché:</strong> un hosting Node gestito con HTTPS e health check, con davanti una CDN e un DNS sotto il nostro controllo.</p>
+        <p class="text-sm mb-2" style="color:#5a5a6a;"><strong class="text-tropical">Come:</strong> il servizio Nest.js gira su Render; Cloudflare gestisce DNS e proxy per hanging-around.com, e il sottodominio di Render reindirizza in modo permanente (308) al dominio canonico.</p>
+        <p class="text-sm" style="color:#5a5a6a;"><strong class="text-tropical">Risultato:</strong> un vero URL di produzione, un solo dominio canonico per la SEO e nessun server da mantenere.</p>
       </div>
     </div>
   </section>
@@ -346,40 +351,40 @@
   <!-- ════════════ FEATURES ════════════ -->
   <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
     <div class="divider mb-8">
-      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Key Features</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Funzionalità principali</h2>
     </div>
     <ul class="grid sm:grid-cols-2 gap-4 max-w-3xl">
       <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
         <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-        <span><strong class="text-white">Verified check-in</strong> — a QR code signed with HMAC that rotates every 45 seconds, plus a geofence: attendance is proven, not declared.</span>
+        <span><strong class="text-white">Check-in verificato</strong> — un QR firmato con HMAC che cambia ogni 45 secondi, più il geofence: la presenza è dimostrata, non dichiarata.</span>
       </li>
       <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
         <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-        <span><strong class="text-white">Waitlist with auto-promotion</strong> — full events queue new sign-ups and promote them, with a notification, when a spot frees up.</span>
+        <span><strong class="text-white">Lista d'attesa automatica</strong> — sugli eventi pieni le nuove iscrizioni vanno in coda e vengono promosse, con notifica, quando si libera un posto.</span>
       </li>
       <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
         <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-        <span><strong class="text-white">Map &amp; category discovery</strong> — explore events on a Leaflet / OpenStreetMap map, filtered by category and sub-category.</span>
+        <span><strong class="text-white">Mappa e categorie</strong> — esplora gli eventi su una mappa Leaflet / OpenStreetMap, filtrando per categoria e sottocategoria.</span>
       </li>
       <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
         <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-        <span><strong class="text-white">Levels &amp; badges</strong> — experience level per category and ~30 badges earned from real attendance.</span>
+        <span><strong class="text-white">Livelli e badge</strong> — livello di esperienza per categoria e circa 30 badge guadagnati con presenze reali.</span>
       </li>
       <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
         <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-        <span><strong class="text-white">Follows &amp; push notifications</strong> — follow requests, per-type notification preferences and Web Push.</span>
+        <span><strong class="text-white">Follow e notifiche push</strong> — richieste di follow, preferenze di notifica per tipo e Web Push.</span>
       </li>
       <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
         <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-        <span><strong class="text-white">Verified reviews</strong> — only people who actually checked in can review an event.</span>
+        <span><strong class="text-white">Recensioni verificate</strong> — può recensire un evento solo chi ha fatto davvero il check-in.</span>
       </li>
       <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
         <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-        <span><strong class="text-white">AI voice assistant</strong> — ask by voice what to do tonight and get real events back (RAG over the event data).</span>
+        <span><strong class="text-white">Assistente vocale AI</strong> — chiedi a voce cosa fare stasera e ricevi eventi reali (RAG sui dati degli eventi).</span>
       </li>
       <li class="feature-li bg-white/5 border border-white/10 rounded-2xl p-4 text-white/85 text-sm">
         <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-        <span><strong class="text-white">Privacy by design</strong> — GDPR data export, versioned consent, private profiles and self-invalidating password-reset tokens.</span>
+        <span><strong class="text-white">Privacy by design</strong> — export dei dati GDPR, consenso versionato, profili privati e token di reset password che si auto-invalidano.</span>
       </li>
     </ul>
   </section>
@@ -387,24 +392,24 @@
   <!-- ════════════ CHALLENGES ════════════ -->
   <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
     <div class="divider mb-8">
-      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Challenges & Learnings</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Sfide e lezioni</h2>
     </div>
     <div class="space-y-4 max-w-3xl">
       <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <p class="text-white font-semibold mb-1">Making attendance impossible to fake</p>
-        <p class="text-sm text-white/80"><strong>Solved:</strong> a static QR can be photographed and forwarded, so the token is server-signed, time-boxed and rotates every 45 s; if location fails, the check-in stays pending for the organiser instead of blocking the user. <strong>Learned:</strong> the hard, boring piece is what gives the rest of the product its value.</p>
+        <p class="text-white font-semibold mb-1">Rendere impossibile falsificare una presenza</p>
+        <p class="text-sm text-white/80"><strong>Soluzione:</strong> un QR statico si può fotografare e inoltrare, quindi il token è firmato dal server, ha una scadenza e cambia ogni 45 s; se la posizione non torna, il check-in resta in attesa dell'organizzatore invece di bloccare l'utente. <strong>Lezione:</strong> il pezzo difficile e noioso è quello che dà valore a tutto il resto.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <p class="text-white font-semibold mb-1">Letting an AI act without opening a second door</p>
-        <p class="text-sm text-white/80"><strong>Solved:</strong> the assistant reads data directly but every write goes through the Nest.js API with the user's own JWT. <strong>Learned:</strong> authorization should live in exactly one place.</p>
+        <p class="text-white font-semibold mb-1">Far agire un'AI senza aprire una seconda porta</p>
+        <p class="text-sm text-white/80"><strong>Soluzione:</strong> l'assistente legge i dati direttamente, ma ogni scrittura passa dall'API Nest.js con il JWT dell'utente. <strong>Lezione:</strong> l'autorizzazione deve vivere in un posto solo.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <p class="text-white font-semibold mb-1">Going to production</p>
-        <p class="text-sm text-white/80"><strong>Solved:</strong> health check endpoint, trust-proxy and rate-limit tuning behind Cloudflare, canonical-domain redirect from Render, secrets only in environment variables. <strong>Learned:</strong> shipping is its own feature — and it has a checklist.</p>
+        <p class="text-white font-semibold mb-1">Andare in produzione</p>
+        <p class="text-sm text-white/80"><strong>Soluzione:</strong> endpoint di health check, trust proxy e rate limit regolati dietro Cloudflare, redirect al dominio canonico da Render, segreti solo nelle variabili d'ambiente. <strong>Lezione:</strong> andare online è una funzionalità a sé — e ha la sua checklist.</p>
       </div>
       <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <p class="text-white font-semibold mb-1">Structuring a growing Nest.js backend</p>
-        <p class="text-sm text-white/80"><strong>Solved:</strong> committed to one module per domain with the Controller/Service split. <strong>Learned:</strong> putting each responsibility in one obvious place pays off the moment more developers join.</p>
+        <p class="text-white font-semibold mb-1">Strutturare un backend Nest.js che cresce</p>
+        <p class="text-sm text-white/80"><strong>Soluzione:</strong> un modulo per dominio, con la separazione Controller/Service. <strong>Lezione:</strong> dare a ogni responsabilità un posto ovvio ripaga appena entrano altri sviluppatori.</p>
       </div>
     </div>
   </section>
@@ -412,30 +417,30 @@
   <!-- ════════════ FUTURE ════════════ -->
   <section class="max-w-4xl mx-auto px-6 py-14" data-reveal>
     <div class="divider mb-8">
-      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">What's Next</h2>
+      <h2 class="font-display text-2xl md:text-3xl whitespace-nowrap text-white">Prossimi passi</h2>
     </div>
     <ul class="grid sm:grid-cols-2 gap-3 max-w-3xl text-sm text-white/85">
-      <li class="bg-white/5 border border-white/10 rounded-2xl p-4">Ticketing and payments with Stripe.</li>
-      <li class="bg-white/5 border border-white/10 rounded-2xl p-4">Publishing the Expo app on the App Store and Play Store.</li>
-      <li class="bg-white/5 border border-white/10 rounded-2xl p-4">An organiser dashboard: attendance, no-shows and aggregated reviews.</li>
-      <li class="bg-white/5 border border-white/10 rounded-2xl p-4">Personalised recommendations from the attendance + interests graph.</li>
+      <li class="bg-white/5 border border-white/10 rounded-2xl p-4">Biglietti e pagamenti con Stripe.</li>
+      <li class="bg-white/5 border border-white/10 rounded-2xl p-4">Pubblicazione dell'app Expo su App Store e Play Store.</li>
+      <li class="bg-white/5 border border-white/10 rounded-2xl p-4">Una dashboard per l'organizzatore: presenze, assenze e recensioni aggregate.</li>
+      <li class="bg-white/5 border border-white/10 rounded-2xl p-4">Suggerimenti personalizzati dal grafo presenze + interessi.</li>
     </ul>
   </section>
 
   <!-- ════════════ FOOTER CTA ════════════ -->
   <section class="max-w-4xl mx-auto px-6 py-16 text-center" data-reveal>
-    <p class="font-display text-2xl md:text-3xl text-white mb-6">Want to see it in action?</p>
+    <p class="font-display text-2xl md:text-3xl text-white mb-6">Vuoi vederlo in azione?</p>
     <div class="flex gap-3 flex-wrap justify-center">
       <a href="https://hanging-around.com" target="_blank" rel="noopener noreferrer"
-         class="btn-ghost text-sm font-medium px-6 py-3 rounded-full">Visit the live site</a>
+         class="btn-ghost text-sm font-medium px-6 py-3 rounded-full">Visita il sito live</a>
       <a href="https://github.com/sebastian0x7b/HangingAround" target="_blank" rel="noopener noreferrer"
-         class="btn-ghost text-sm font-medium px-6 py-3 rounded-full">View on GitHub</a>
-      <a href="../index.html#contact" class="btn-ghost text-sm font-medium px-6 py-3 rounded-full">Get in touch</a>
+         class="btn-ghost text-sm font-medium px-6 py-3 rounded-full">Vedi su GitHub</a>
+      <a href="../index.html#contact" class="btn-ghost text-sm font-medium px-6 py-3 rounded-full">Contattami</a>
     </div>
   </section>
 
   <footer class="text-center py-8 text-xs border-t border-white/10 text-white/60">
-    © 2026 Claudio Santoro — <a href="../index.html" class="underline hover:text-white">Back to portfolio</a>
+    © 2026 Claudio Santoro — <a href="../index.html" class="underline hover:text-white">Torna al portfolio</a>
   </footer>
 
   <!-- Reveal-on-scroll (native IntersectionObserver, no libraries) -->
